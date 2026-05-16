@@ -43,6 +43,28 @@ def parse_num(texto):
         return 0.0
 
 
+def debug_tabela(soup):
+    tabela = soup.find("table")
+    if not tabela:
+        print("NENHUMA TABELA", flush=True)
+        return
+    tbody = tabela.find("tbody")
+    rows_tbody = tbody.find_all("tr") if tbody else []
+    rows_all = tabela.find_all("tr")
+    print("rows em tbody: " + str(len(rows_tbody)), flush=True)
+    print("rows total: " + str(len(rows_all)), flush=True)
+    rows = rows_tbody if rows_tbody else rows_all
+    for i, row in enumerate(rows[:5]):
+        cells_td = row.find_all("td")
+        cells_th = row.find_all("th")
+        print("Row " + str(i) + ": td=" + str(len(cells_td)) + " th=" + str(len(cells_th)), flush=True)
+        for j, c in enumerate(cells_td[:4]):
+            rs = c.get("rowspan", "1")
+            cls = " ".join(c.get("class", []))
+            txt = c.get_text(strip=True)[:25]
+            print("  td[" + str(j) + "] rs=" + str(rs) + " cls=" + cls + " txt=" + txt, flush=True)
+
+
 def coletar_relatorio(data_ini, data_fim):
     todos = []
     page = 1
@@ -55,17 +77,19 @@ def coletar_relatorio(data_ini, data_fim):
             + "&per-page=500&page=" + str(page)
         )
         r = session.get(url, timeout=30)
-        print("Pagina " + str(page) + ": status=" + str(r.status_code), flush=True)
+        print("Pag" + str(page) + ": status=" + str(r.status_code) + " url=" + r.url[:70], flush=True)
         soup = BeautifulSoup(r.text, "html.parser")
+
+        if page == 1:
+            debug_tabela(soup)
 
         tabela = soup.find("table")
         if not tabela:
-            print("Pagina " + str(page) + ": nenhuma tabela encontrada", flush=True)
+            print("Pag" + str(page) + ": sem tabela", flush=True)
             break
 
         tbody = tabela.find("tbody")
         rows = tbody.find_all("tr") if tbody else tabela.find_all("tr")
-        print("Pagina " + str(page) + ": " + str(len(rows)) + " linhas", flush=True)
 
         loja_atual = None
         registros_pagina = 0
@@ -111,7 +135,7 @@ def coletar_relatorio(data_ini, data_fim):
                 })
                 registros_pagina += 1
 
-        print("Pagina " + str(page) + ": " + str(registros_pagina) + " registros (total: " + str(len(todos)) + ")", flush=True)
+        print("Pag" + str(page) + ": " + str(registros_pagina) + " regs (total: " + str(len(todos)) + ")", flush=True)
 
         if registros_pagina == 0:
             break
@@ -126,7 +150,7 @@ def coletar_relatorio(data_ini, data_fim):
 
 def main():
     import pytz
-    print("=== INICIANDO COLETA ===", flush=True)
+    print("=== COLETA ===", flush=True)
     if DATA_SIMULADA:
         hoje = datetime.strptime(DATA_SIMULADA, "%d/%m/%Y")
     else:
@@ -141,11 +165,10 @@ def main():
     print("Periodo: " + data_ini_db + " a " + data_fim_db, flush=True)
 
     if not login():
-        print("Abortando: login falhou", flush=True)
         return
 
     registros = coletar_relatorio(data_ini_db, data_fim_db)
-    print("Total coletado: " + str(len(registros)) + " marcas", flush=True)
+    print("Total: " + str(len(registros)) + " marcas", flush=True)
 
     por_loja = {}
     total_geral = 0.0
@@ -159,12 +182,9 @@ def main():
         total_geral += rec["total_vendas"]
 
     resultado = {
-        "data_coleta": data_str,
-        "periodo_ini": data_ini_db,
-        "periodo_fim": data_fim_db,
-        "mes_ref": mes_ref,
-        "total_geral": round(total_geral, 2),
-        "total_marcas": len(registros),
+        "data_coleta": data_str, "periodo_ini": data_ini_db,
+        "periodo_fim": data_fim_db, "mes_ref": mes_ref,
+        "total_geral": round(total_geral, 2), "total_marcas": len(registros),
         "lojas": por_loja,
     }
 
@@ -172,11 +192,9 @@ def main():
     nome = "dados/relatorio_" + mes_ref + ".json"
     with open(nome, "w", encoding="utf-8") as f:
         json.dump(resultado, f, indent=2, ensure_ascii=False)
-    print("Arquivo salvo: " + nome, flush=True)
-
-    print("\n=== RESUMO ===", flush=True)
+    print("Salvo: " + nome, flush=True)
     for loja, d in por_loja.items():
-        print("  " + loja + ": R$ " + str(round(d["total_loja"], 2)) + " (" + str(len(d["marcas"])) + " marcas)", flush=True)
+        print(loja + ": R$" + str(round(d["total_loja"],2)) + " (" + str(len(d["marcas"])) + ")", flush=True)
 
 
 if __name__ == "__main__":

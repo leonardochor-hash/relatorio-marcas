@@ -1,0 +1,42 @@
+name: Coletar Relatorio Marcas
+
+on:
+  schedule:
+    # Todo dia as 23h BRT = 02h UTC do dia seguinte
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      data_simulada:
+        description: "Data simulada (ex: 15/05/2026)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias
+        run: pip install requests beautifulsoup4 pytz
+
+      - name: Executar coleta
+        env:
+          DATA_SIMULADA: ${{ github.event.inputs.data_simulada }}
+        run: python coletar_marcas.py
+
+      - name: Salvar relatorio no repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main || true
+          git add -f dados/ || true
+          git diff --cached --quiet || git commit -m "chore: atualiza relatorio de marcas [skip ci]"
+          git push origin main || true

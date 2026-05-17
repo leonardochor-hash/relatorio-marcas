@@ -231,7 +231,7 @@ window.addEventListener('DOMContentLoaded', function init(){
 
 <script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
-function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂÃÂ-ÃÂÃÂ¯]/g,'').toLowerCase().trim(); }
+function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂÃÂÃÂÃÂ-ÃÂÃÂÃÂÃÂ¯]/g,'').toLowerCase().trim(); }
 function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
@@ -366,7 +366,8 @@ document.getElementById('uploadBar').addEventListener('drop', e => { if (e.dataT
 document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(x => x.classList.remove('active')); t.classList.add('active'); state.tabAtiva = t.dataset.tab; renderTabela(); }));
 ['filtroLoja','filtroEspaco','filtroBusca','filtroStatus'].forEach(id => document.getElementById(id).addEventListener('input', renderTabela));
 ['filtroLojaPanelM','filtroLojaPanelS'].forEach(id => document.getElementById(id).addEventListener('change', () => { if (state._abM) document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(state._abM, document.getElementById('filtroLojaPanelM').value); if (state._abS) document.getElementById('panelLojaSemanal').innerHTML = renderConsolidadoPorEspaco(state._abS, document.getElementById('filtroLojaPanelS').value); }));
-/* carregarDados sera chamado por aplicarSessao() apos login */
+// Boot: se ja tem sessao, carrega dados; senao espera login
+if (typeof SESSAO !== 'undefined' && SESSAO) { carregarDados().then(()=>{ if(typeof aplicarRestricoesPanel==='function') aplicarRestricoesPanel(); }); }
 </script>
 </body>
 </html>

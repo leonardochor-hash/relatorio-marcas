@@ -304,9 +304,7 @@ function render() {
   (function(){ function brk(arr){ const tot={RS:0,BS:0,NS:0}; for(const l of linhas) tot[l.loja]=(tot[l.loja]||0)+1; const sub={RS:0,BS:0,NS:0}; for(const l of arr) sub[l.loja]=(sub[l.loja]||0)+1; return ['RS','BS','NS'].filter(k=>tot[k]>0).map(k=>'<span style="display:inline-block;margin-right:10px;font-size:11px;color:#9ab;">'+k+' '+sub[k]+'/'+tot[k]+'</span>').join(''); } const kpiBrk=function(lbl,total,brkHtml,cls){ return '<div class="kpi '+cls+'"><div class="lbl">'+lbl+'</div><div class="val">'+total+'</div><div style="margin-top:4px;">'+brkHtml+'</div></div>'; }; document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpiBrk('Abaixo meta MENSAL', abM.length+' / '+linhas.length, brk(abM), abM.length > linhas.length/2 ? 'danger' : 'warn'), kpiBrk('Abaixo meta SEMANAL', abS.length+' / '+linhas.length, brk(abS), abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal_.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal_.total_geral || 0), 'ok')].join(''); })();
   state._abM = abM; state._abS = abS;
   document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(abM, document.getElementById('filtroLojaPanelM').value);
-  document.getElementById('panelEspacoMensal').innerHTML = renderAgrupado(abM, 'tipo_espaco');
   document.getElementById('panelLojaSemanal').innerHTML = renderConsolidadoPorEspaco(abS, document.getElementById('filtroLojaPanelS').value);
-  document.getElementById('panelEspacoSemanal').innerHTML = renderAgrupado(abS, 'tipo_espaco');
   popularFiltroEspaco(linhas);
   renderTabela();
 }

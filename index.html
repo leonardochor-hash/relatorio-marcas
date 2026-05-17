@@ -229,7 +229,7 @@ window.addEventListener('DOMContentLoaded', function init(){
 
 <script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
-function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂÃÂÃÂÃÂ-ÃÂÃÂÃÂÃÂ¯]/g,'').toLowerCase().trim(); }
+function norm(s) { return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,''); }
 function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
@@ -270,10 +270,17 @@ function iterarMarcas(snapshot) {
 
 function getVenda(snapshot, lojaSigla, marca) {
   const marcaNorm = norm(marca);
+  if(!marcaNorm) return 0;
+  let exato = 0;
+  let substr = 0;
   for (const m of iterarMarcas(snapshot)) {
-    if (m.loja_sigla === lojaSigla && (m.marca_normalizada === marcaNorm || norm(m.marca) === marcaNorm)) return m.total || 0;
+    if (m.loja_sigla !== lojaSigla) continue;
+    const vNorm = norm(m.marca) || norm(m.marca_normalizada);
+    if(!vNorm) continue;
+    if(vNorm === marcaNorm) { exato = m.total || 0; break; }
+    if(vNorm.includes(marcaNorm) || marcaNorm.includes(vNorm)){ if(!substr) substr = m.total || 0; }
   }
-  return 0;
+  return exato || substr || 0;
 }
 
 function calcLinhas() {

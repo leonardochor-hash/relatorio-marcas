@@ -92,7 +92,7 @@ tr:hover { background: #1f2a3d; }
 <script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
 function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().trim(); }
-function fmt(v) { return 'R$ ' + (v||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
 let state = { metas: [], mensal: null, semanal: null, tabAtiva: 'comparativo' };
@@ -174,7 +174,7 @@ function kpi(lbl, val, cls) { return '<div class="kpi ' + cls + '"><div class="l
 
 function renderAgrupado(arr, campo) { const g = {}; for (const l of arr) g[l[campo]] = (g[l[campo]] || 0) + 1; const e = Object.entries(g).sort((a,b) => b[1] - a[1]); if (e.length === 0) return '<div class="empty">Nenhuma marca abaixo da meta</div>'; return e.map(([k,v]) => { const lbl = campo === 'loja' ? (LOJA_NOMES[k] || k) : k; return '<div class="panel-row"><span class="nm">' + lbl + '</span><span class="ct">' + v + '</span></div>'; }).join(''); }
 
-function popularFiltroEspaco(linhas) { const sel = document.getElementById('filtroEspaco'); const va = sel.value; const t = [...new Set(linhas.map(l => l.tipo_espaco))].sort(); sel.innerHTML = '<option value="">Todos os tipos</option>' + t.map(x => '<option>' + x + '</option>').join(''); sel.value = va; }
+function popularFiltroEspaco(linhas) { const sel = document.getElementById('filtroEspaco'); const va = sel.value; const TIPOS_VALIDOS = ['Arara','Bandeja','Box Inferior','Prateleira','Vitrine']; const t = [...new Set(linhas.map(l => l.tipo_espaco))].filter(x => TIPOS_VALIDOS.includes(x)).sort(); sel.innerHTML = '<option value="">Todos os tipos</option>' + t.map(x => '<option>' + x + '</option>').join(''); sel.value = va; }
 
 function renderTabela() {
   const w = document.getElementById('tableWrap');

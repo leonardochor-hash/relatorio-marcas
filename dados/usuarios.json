@@ -1,0 +1,34 @@
+{
+  "_observacao": "Senhas armazenadas como SHA-256. Use admin.html para gerar novos hashes. Senha inicial de TODOS: 1234 (troque!)",
+  "_atualizado_em": "2026-05-17T22:25:11.866Z",
+  "usuarios": [
+    {
+      "usuario": "admin",
+      "senha_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "tipo": "admin",
+      "loja": null,
+      "nome": "Administrador"
+    },
+    {
+      "usuario": "gerente_rs",
+      "senha_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "tipo": "gerente",
+      "loja": "RS",
+      "nome": "Gerente Rio Sul"
+    },
+    {
+      "usuario": "gerente_bs",
+      "senha_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "tipo": "gerente",
+      "loja": "BS",
+      "nome": "Gerente Barra Shopping"
+    },
+    {
+      "usuario": "gerente_ns",
+      "senha_hash": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+      "tipo": "gerente",
+      "loja": "NS",
+      "nome": "Gerente NorteShopping"
+    }
+  ]
+}

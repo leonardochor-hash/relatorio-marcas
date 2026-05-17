@@ -1,0 +1,90 @@
+{
+  "_observacao": "Arquivo modelo gerado a partir da imagem da planilha. Substitua os valores pelos reais via dashboard ou commitando este arquivo novamente.",
+  "_atualizado_em": "2026-05-17",
+  "metas": [
+    {
+      "loja": "RS",
+      "marca": "Florescendo",
+      "tipo_espaco": "Arara",
+      "meta_mensal": 2000,
+      "meta_semanal": 500
+    },
+    {
+      "loja": "RS",
+      "marca": "arrazo fashion",
+      "tipo_espaco": "Box Inferior",
+      "meta_mensal": 2001,
+      "meta_semanal": 501
+    },
+    {
+      "loja": "RS",
+      "marca": "Donna Zu moda Feminin",
+      "tipo_espaco": "Bandeja",
+      "meta_mensal": 2002,
+      "meta_semanal": 502
+    },
+    {
+      "loja": "RS",
+      "marca": "Dress tutus",
+      "tipo_espaco": "Prateleira",
+      "meta_mensal": 2003,
+      "meta_semanal": 503
+    },
+    {
+      "loja": "BS",
+      "marca": "dream closet",
+      "tipo_espaco": "Vitrine",
+      "meta_mensal": 2004,
+      "meta_semanal": 504
+    },
+    {
+      "loja": "BS",
+      "marca": "Florescendo",
+      "tipo_espaco": "Arara",
+      "meta_mensal": 2005,
+      "meta_semanal": 505
+    },
+    {
+      "loja": "BS",
+      "marca": "corpo em evidencia",
+      "tipo_espaco": "Box Inferior",
+      "meta_mensal": 2006,
+      "meta_semanal": 506
+    },
+    {
+      "loja": "BS",
+      "marca": "Lolla.com",
+      "tipo_espaco": "Bandeja",
+      "meta_mensal": 2007,
+      "meta_semanal": 507
+    },
+    {
+      "loja": "NS",
+      "marca": "Donna Zu moda Feminin",
+      "tipo_espaco": "Silver Joias",
+      "meta_mensal": 2008,
+      "meta_semanal": 508
+    },
+    {
+      "loja": "NS",
+      "marca": "Marca B",
+      "tipo_espaco": "day boutique",
+      "meta_mensal": 2009,
+      "meta_semanal": 509
+    },
+    {
+      "loja": "NS",
+      "marca": "Marca D",
+      "tipo_espaco": "UseAimee",
+      "meta_mensal": 2010,
+      "meta_semanal": 510
+    },
+    {
+      "loja": "NS",
+      "marca": "Marca F",
+      "tipo_espaco": "otica evox",
+      "meta_mensal": 2011,
+      "meta_semanal": 511
+    }
+  ]
+}

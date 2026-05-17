@@ -1,9 +1,9 @@
 {
   "tipo": "mensal",
-  "data_coleta": "2026-05-17 21:54:27",
+  "data_coleta": "2026-05-17 22:37:58",
   "periodo_ini": "2026-05-01",
   "periodo_fim": "2026-05-17",
-  "total_geral": 268402.72,
+  "total_geral": 268892.59,
   "total_marcas": 166,
   "lojas": {
     "BS": {
@@ -14,14 +14,14 @@
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 50470.689999999995,
-      "cupons": 359,
+      "total": 50800.659999999996,
+      "cupons": 361,
       "marcas": 49
     },
     "RS": {
       "nome": "Rio Sul",
-      "total": 139471.13000000003,
-      "cupons": 679,
+      "total": 139631.03,
+      "cupons": 680,
       "marcas": 65
     }
   },
@@ -535,9 +535,9 @@
       "loja_nome": "norteshopping",
       "marca": "otica evox",
       "marca_normalizada": "otica evox",
-      "total": 2639.76,
-      "cupons": 13,
-      "itens": 15
+      "total": 2939.74,
+      "cupons": 14,
+      "itens": 17
     },
     {
       "loja_sigla": "NS",
@@ -650,6 +650,15 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "marimar acessorios",
+      "marca_normalizada": "marimar acessorios",
+      "total": 723.74,
+      "cupons": 11,
+      "itens": 17
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "solmare",
       "marca_normalizada": "solmare",
       "total": 713.99,
@@ -664,15 +673,6 @@
       "total": 709.96,
       "cupons": 4,
       "itens": 4
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "marimar acessorios",
-      "marca_normalizada": "marimar acessorios",
-      "total": 693.75,
-      "cupons": 10,
-      "itens": 16
     },
     {
       "loja_sigla": "NS",
@@ -958,9 +958,9 @@
       "loja_nome": "Rio Sul",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 12382.2,
-      "cupons": 50,
-      "itens": 78
+      "total": 12542.1,
+      "cupons": 51,
+      "itens": 79
     },
     {
       "loja_sigla": "RS",

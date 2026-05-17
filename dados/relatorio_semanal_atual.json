@@ -1,27 +1,27 @@
 {
   "tipo": "semanal",
-  "data_coleta": "2026-05-17 21:54:27",
+  "data_coleta": "2026-05-17 22:37:59",
   "periodo_ini": "2026-05-11",
   "periodo_fim": "2026-05-17",
-  "total_geral": 77506.01,
+  "total_geral": 77998.72,
   "total_marcas": 119,
   "lojas": {
     "BS": {
       "nome": "Barra Shopping",
-      "total": 21473.989999999998,
+      "total": 21476.829999999998,
       "cupons": 89,
       "marcas": 31
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 19523.67000000001,
-      "cupons": 129,
+      "total": 19853.640000000007,
+      "cupons": 131,
       "marcas": 40
     },
     "RS": {
       "nome": "Rio Sul",
-      "total": 36508.350000000006,
-      "cupons": 186,
+      "total": 36668.25,
+      "cupons": 187,
       "marcas": 48
     }
   },
@@ -292,7 +292,7 @@
       "loja_nome": "Barra Shopping",
       "marca": "Like an Angel",
       "marca_normalizada": "like an angel",
-      "total": 0.0,
+      "total": 2.84,
       "cupons": 0,
       "itens": 0
     },
@@ -353,6 +353,15 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "otica evox",
+      "marca_normalizada": "otica evox",
+      "total": 1129.93,
+      "cupons": 5,
+      "itens": 7
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "day boutique",
       "marca_normalizada": "day boutique",
       "total": 1059.96,
@@ -367,15 +376,6 @@
       "total": 948.5,
       "cupons": 6,
       "itens": 11
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "otica evox",
-      "marca_normalizada": "otica evox",
-      "total": 829.95,
-      "cupons": 4,
-      "itens": 5
     },
     {
       "loja_sigla": "NS",
@@ -580,9 +580,9 @@
       "loja_nome": "norteshopping",
       "marca": "marimar acessorios",
       "marca_normalizada": "marimar acessorios",
-      "total": 162.95,
-      "cupons": 4,
-      "itens": 5
+      "total": 192.94,
+      "cupons": 5,
+      "itens": 6
     },
     {
       "loja_sigla": "NS",
@@ -679,9 +679,9 @@
       "loja_nome": "Rio Sul",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 4517.2,
-      "cupons": 17,
-      "itens": 28
+      "total": 4677.1,
+      "cupons": 18,
+      "itens": 29
     },
     {
       "loja_sigla": "RS",

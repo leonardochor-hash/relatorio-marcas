@@ -294,9 +294,11 @@ function calcLinhas() {
 
 function marcasSemMeta() {
   const setMetas = new Set(state.metas.map(m => m.loja + '|' + norm(m.marca)));
+  const setMarcasGlobal = new Set(state.metas.map(m => norm(m.marca)));
   const mapa = {};
-  for (const r of iterarMarcas(state.mensal)) { const k = r.loja_sigla + '|' + (r.marca_normalizada || norm(r.marca)); if (!setMetas.has(k)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].mensal = r.total; } }
-  for (const r of iterarMarcas(state.semanal)) { const k = r.loja_sigla + '|' + (r.marca_normalizada || norm(r.marca)); if (!setMetas.has(k)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].semanal = r.total; } }
+  function temMeta(loja_sigla, marca) { const mn = norm(marca); if(!mn) return true; if (setMetas.has(loja_sigla + '|' + mn)) return true; if (setMarcasGlobal.has(mn)) return true; for (const meta of state.metas) { const metaNorm = norm(meta.marca); if(!metaNorm) continue; if (metaNorm.includes(mn) || mn.includes(metaNorm)) return true; } return false; }
+  for (const r of iterarMarcas(state.mensal)) { const k = r.loja_sigla + '|' + norm(r.marca); if (!temMeta(r.loja_sigla, r.marca)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].mensal = r.total; } }
+  for (const r of iterarMarcas(state.semanal)) { const k = r.loja_sigla + '|' + norm(r.marca); if (!temMeta(r.loja_sigla, r.marca)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].semanal = r.total; } }
   return Object.values(mapa).sort((a,b) => b.mensal - a.mensal);
 }
 

@@ -223,15 +223,15 @@ function abrirLog() {
 }
 function fecharLog() { document.getElementById('logModal').classList.remove('show'); }
 
-(function init(){
+window.addEventListener('DOMContentLoaded', function init(){
   const s = sessionStorage.getItem('moombox_sessao');
   if (s) { try { SESSAO = JSON.parse(s); aplicarSessao(); return; } catch(e){} }
-})();
+});
 </script>
 
 <script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
-function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂ-ÃÂ¯]/g,'').toLowerCase().trim(); }
+function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂÃÂ-ÃÂÃÂ¯]/g,'').toLowerCase().trim(); }
 function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 

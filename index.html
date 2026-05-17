@@ -125,9 +125,7 @@ tr:hover { background: #1f2a3d; }
 
 <div class="panels">
   <div class="panel"><h2>Marcas abaixo da meta por loja (Mensal) <select id="filtroLojaPanelM" style="float:right;background:#243245;color:#e6e6e6;border:1px solid #2a3a52;border-radius:4px;padding:2px 6px;font-size:11px;"><option value="">Todas</option><option value="RS">Rio Sul</option><option value="BS">Barra Shopping</option><option value="NS">NorteShopping</option></select></h2><div id="panelLojaMensal"></div></div>
-  <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Mensal)</h2><div id="panelEspacoMensal"></div></div>
   <div class="panel"><h2>Marcas abaixo da meta por loja (Semanal) <select id="filtroLojaPanelS" style="float:right;background:#243245;color:#e6e6e6;border:1px solid #2a3a52;border-radius:4px;padding:2px 6px;font-size:11px;"><option value="">Todas</option><option value="RS">Rio Sul</option><option value="BS">Barra Shopping</option><option value="NS">NorteShopping</option></select></h2><div id="panelLojaSemanal"></div></div>
-  <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Semanal)</h2><div id="panelEspacoSemanal"></div></div>
 </div>
 
 <div class="tabs">
@@ -303,7 +301,7 @@ function render() {
   const sm = state.semanal?.periodo_ini && state.semanal?.periodo_fim ? ' - Semana: ' + state.semanal.periodo_ini + ' a ' + state.semanal.periodo_fim : '';
   document.getElementById('subtitle').innerText = 'Coleta: ' + dc + ' - ' + state.metas.length + ' marcas com meta' + sm;
   (function(){const sel=document.getElementById('filtroLoja');if(sel && !sel.dataset.init){sel.dataset.init='1';const lj=(typeof SESSAO !== 'undefined' && SESSAO && SESSAO.loja)?SESSAO.loja:null;if(lj){sel.innerHTML='<option value="'+lj+'">'+(LOJA_NOMES[lj]||lj)+'</option>';sel.value=lj;sel.disabled=true;}}})();
-  document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpi('Abaixo meta MENSAL', abM.length + ' / ' + linhas.length, abM.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Abaixo meta SEMANAL', abS.length + ' / ' + linhas.length, abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal?.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal?.total_geral || 0), 'ok')].join('');
+  (function(){ function brk(arr){ const tot={RS:0,BS:0,NS:0}; for(const l of linhas) tot[l.loja]=(tot[l.loja]||0)+1; const sub={RS:0,BS:0,NS:0}; for(const l of arr) sub[l.loja]=(sub[l.loja]||0)+1; return ['RS','BS','NS'].filter(k=>tot[k]>0).map(k=>'<span style="display:inline-block;margin-right:10px;font-size:11px;color:#9ab;">'+k+' '+sub[k]+'/'+tot[k]+'</span>').join(''); } const kpiBrk=function(lbl,total,brkHtml,cls){ return '<div class="kpi '+cls+'"><div class="lbl">'+lbl+'</div><div class="val">'+total+'</div><div style="margin-top:4px;">'+brkHtml+'</div></div>'; }; document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpiBrk('Abaixo meta MENSAL', abM.length+' / '+linhas.length, brk(abM), abM.length > linhas.length/2 ? 'danger' : 'warn'), kpiBrk('Abaixo meta SEMANAL', abS.length+' / '+linhas.length, brk(abS), abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal_.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal_.total_geral || 0), 'ok')].join(''); })();
   state._abM = abM; state._abS = abS;
   document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(abM, document.getElementById('filtroLojaPanelM').value);
   document.getElementById('panelEspacoMensal').innerHTML = renderAgrupado(abM, 'tipo_espaco');

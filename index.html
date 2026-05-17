@@ -52,9 +52,66 @@ tr:hover { background: #1f2a3d; }
 .footer { text-align: center; color: #666; font-size: 11px; margin-top: 20px; padding: 10px; }
 .empty { text-align: center; color: #999; padding: 40px; }
 @media (max-width: 768px) { .panels { grid-template-columns: 1fr; } table { font-size: 11px; } th, td { padding: 6px 4px; } }
+
+.userbar { background: #1a2332; border: 1px solid #2a3a52; border-radius: 6px; padding: 8px 14px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+.userbar .uinfo { color: #aaa; }
+.userbar .uinfo b { color: #4fc3f7; }
+.userbar .ubtn { background: #243245; color: #e6e6e6; border: 1px solid #2a3a52; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 12px; margin-left: 6px; }
+.userbar .ubtn:hover { background: #2a3a52; }
+.userbar .ubtn.danger { color: #ef5350; }
+#loginOverlay { position: fixed; inset: 0; background: #0f1419; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+#loginOverlay .box { background: #1a2332; border-radius: 12px; padding: 32px; width: 360px; max-width: 90vw; border: 1px solid #2a3a52; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+#loginOverlay h1 { color: #4fc3f7; font-size: 22px; margin-bottom: 6px; text-align: center; }
+#loginOverlay .sub { color: #888; font-size: 12px; text-align: center; margin-bottom: 22px; }
+#loginOverlay label { display: block; color: #aaa; font-size: 12px; margin-bottom: 4px; margin-top: 12px; }
+#loginOverlay input { width: 100%; background: #243245; border: 1px solid #2a3a52; color: #e6e6e6; padding: 10px 12px; border-radius: 6px; font-size: 14px; }
+#loginOverlay input:focus { outline: none; border-color: #4fc3f7; }
+#loginOverlay button { width: 100%; background: #4fc3f7; color: #0f1419; border: none; padding: 11px; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 18px; font-size: 14px; }
+#loginOverlay button:hover { background: #29b6f6; }
+#loginOverlay .err { color: #ef5350; font-size: 12px; margin-top: 10px; text-align: center; min-height: 16px; }
+#logModal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 9998; display: none; align-items: center; justify-content: center; }
+#logModal.show { display: flex; }
+#logModal .modal-box { background: #1a2332; border-radius: 8px; padding: 20px; width: 800px; max-width: 95vw; max-height: 85vh; overflow: auto; border: 1px solid #2a3a52; }
+#logModal h2 { color: #4fc3f7; margin-bottom: 14px; }
+#logModal table { width: 100%; border-collapse: collapse; font-size: 12px; }
+#logModal th, #logModal td { padding: 6px 8px; border-bottom: 1px solid #2a3a52; text-align: left; }
+#logModal th { color: #4fc3f7; text-transform: uppercase; font-size: 11px; }
+#logModal .close { float: right; background: #ef5350; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
 </style>
 </head>
 <body>
+<div id="loginOverlay">
+  <div class="box">
+    <h1>Relatorio Moombox</h1>
+    <div class="sub">Faca login para acessar o dashboard</div>
+    <form id="loginForm" onsubmit="return doLogin(event)">
+      <label>Usuario</label>
+      <input type="text" id="liUsr" autocomplete="username" required>
+      <label>Senha</label>
+      <input type="password" id="liPwd" autocomplete="current-password" required>
+      <button type="submit">Entrar</button>
+      <div class="err" id="liErr"></div>
+    </form>
+  </div>
+</div>
+
+<div class="userbar" id="userbar" style="display:none;">
+  <div class="uinfo">Logado como <b id="ubNome">-</b> (<span id="ubTipo">-</span>) - Visualizando: <b id="ubLoja">-</b></div>
+  <div>
+    <button class="ubtn" id="ubAdminBtn" onclick="window.open('admin.html','_blank')" style="display:none;">Admin</button>
+    <button class="ubtn" id="ubLogBtn" onclick="abrirLog()" style="display:none;">Ver log</button>
+    <button class="ubtn danger" onclick="doLogout()">Sair</button>
+  </div>
+</div>
+
+<div id="logModal" onclick="if(event.target===this)fecharLog()">
+  <div class="modal-box">
+    <button class="close" onclick="fecharLog()">Fechar</button>
+    <h2>Log de Acesso</h2>
+    <div id="logContent"></div>
+  </div>
+</div>
+
 <h1>Relatorio de Marcas - Moombox</h1>
 <div class="subtitle" id="subtitle">Carregando...</div>
 
@@ -90,8 +147,91 @@ tr:hover { background: #1f2a3d; }
 <div class="footer">Dashboard atualizado diariamente as 23h BRT - Semana inicia segunda-feira</div>
 
 <script>
+// === AUTH MODULE ===
+const USUARIOS_URL = 'dados/usuarios.json';
+let SESSAO = null;
+
+async function sha256(t) { const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(t)); return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+
+function logAcesso(usuario, evento, tipo) {
+  const log = JSON.parse(localStorage.getItem('acesso_log') || '[]');
+  log.push({ dt: new Date().toLocaleString('pt-BR'), usuario, evento, tipo, ua: navigator.userAgent });
+  if (log.length > 200) log.splice(0, log.length - 200);
+  localStorage.setItem('acesso_log', JSON.stringify(log));
+}
+
+async function doLogin(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const u = document.getElementById('liUsr').value.trim();
+  const p = document.getElementById('liPwd').value;
+  const err = document.getElementById('liErr');
+  err.textContent = '';
+  try {
+    const r = await fetch(USUARIOS_URL + '?t=' + Date.now());
+    const data = await r.json();
+    const lista = data.usuarios || [];
+    const hp = await sha256(p);
+    const u2 = lista.find(x => x.usuario === u && x.senha_hash === hp);
+    if (!u2) { err.textContent = 'Usuario ou senha invalidos'; return false; }
+    SESSAO = u2;
+    sessionStorage.setItem('moombox_sessao', JSON.stringify(u2));
+    logAcesso(u, 'login', u2.tipo);
+    aplicarSessao();
+  } catch(ex) { err.textContent = 'Erro: ' + ex.message; }
+  return false;
+}
+
+function doLogout() {
+  if (SESSAO) logAcesso(SESSAO.usuario, 'logout', SESSAO.tipo);
+  sessionStorage.removeItem('moombox_sessao');
+  SESSAO = null;
+  location.reload();
+}
+
+function aplicarRestricoesPanel() {
+  if (SESSAO && SESSAO.loja) {
+    ['filtroLojaPanelM','filtroLojaPanelS'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.value = SESSAO.loja; el.disabled = true; el.dispatchEvent(new Event('change')); }
+    });
+  }
+}
+
+function aplicarSessao() {
+  document.getElementById('loginOverlay').style.display = 'none';
+  document.getElementById('userbar').style.display = 'flex';
+  document.getElementById('ubNome').textContent = SESSAO.nome || SESSAO.usuario;
+  document.getElementById('ubTipo').textContent = SESSAO.tipo;
+  document.getElementById('ubLoja').textContent = SESSAO.loja ? (({RS:'Rio Sul',BS:'Barra Shopping',NS:'NorteShopping'})[SESSAO.loja] || SESSAO.loja) : 'Todas as lojas';
+  if (SESSAO.tipo === 'admin') {
+    document.getElementById('ubAdminBtn').style.display = 'inline-block';
+    document.getElementById('ubLogBtn').style.display = 'inline-block';
+  }
+  if (typeof carregarDados === 'function') {
+    const p = carregarDados();
+    if (p && p.then) p.then(()=>aplicarRestricoesPanel()).catch(()=>aplicarRestricoesPanel());
+    else setTimeout(aplicarRestricoesPanel, 500);
+  }
+}
+
+function abrirLog() {
+  const log = JSON.parse(localStorage.getItem('acesso_log') || '[]');
+  const c = document.getElementById('logContent');
+  if (log.length === 0) c.innerHTML = '<div class="empty">Nenhum acesso registrado</div>';
+  else c.innerHTML = '<table><thead><tr><th>Data/Hora</th><th>Usuario</th><th>Evento</th><th>Tipo</th><th>Navegador</th></tr></thead><tbody>' + log.slice().reverse().map(r => '<tr><td>' + r.dt + '</td><td>' + r.usuario + '</td><td>' + r.evento + '</td><td>' + (r.tipo||'-') + '</td><td title="'+(r.ua||'').replace(/"/g,'')+'">' + (r.ua||'-').substring(0,50) + '</td></tr>').join('') + '</tbody></table><p style="color:#888;font-size:11px;margin-top:8px;">Total: ' + log.length + '</p>';
+  document.getElementById('logModal').classList.add('show');
+}
+function fecharLog() { document.getElementById('logModal').classList.remove('show'); }
+
+(function init(){
+  const s = sessionStorage.getItem('moombox_sessao');
+  if (s) { try { SESSAO = JSON.parse(s); aplicarSessao(); return; } catch(e){} }
+})();
+</script>
+
+<script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
-function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[Ì-Í¯]/g,'').toLowerCase().trim(); }
+function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[ÃÂ-ÃÂ¯]/g,'').toLowerCase().trim(); }
 function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
@@ -139,7 +279,8 @@ function getVenda(snapshot, lojaSigla, marca) {
 }
 
 function calcLinhas() {
-  return state.metas.map(m => {
+  const lojaUser = (typeof SESSAO !== 'undefined' && SESSAO && SESSAO.loja) ? SESSAO.loja : null;
+  return state.metas.filter(m => !lojaUser || m.loja === lojaUser).map(m => {
     const vM = getVenda(state.mensal, m.loja, m.marca);
     const vS = getVenda(state.semanal, m.loja, m.marca);
     return { loja: m.loja, marca: m.marca, tipo_espaco: m.tipo_espaco, meta_mensal: m.meta_mensal, venda_mensal: vM, saldo_mensal: m.meta_mensal - vM, pct_mensal: m.meta_mensal > 0 ? (vM / m.meta_mensal) * 100 : 0, meta_semanal: m.meta_semanal, venda_semanal: vS, saldo_semanal: m.meta_semanal - vS, pct_semanal: m.meta_semanal > 0 ? (vS / m.meta_semanal) * 100 : 0 };
@@ -161,6 +302,7 @@ function render() {
   const dc = state.mensal?.data_coleta || '';
   const sm = state.semanal?.periodo_ini && state.semanal?.periodo_fim ? ' - Semana: ' + state.semanal.periodo_ini + ' a ' + state.semanal.periodo_fim : '';
   document.getElementById('subtitle').innerText = 'Coleta: ' + dc + ' - ' + state.metas.length + ' marcas com meta' + sm;
+  (function(){const sel=document.getElementById('filtroLoja');if(sel && !sel.dataset.init){sel.dataset.init='1';const lj=(typeof SESSAO !== 'undefined' && SESSAO && SESSAO.loja)?SESSAO.loja:null;if(lj){sel.innerHTML='<option value="'+lj+'">'+(LOJA_NOMES[lj]||lj)+'</option>';sel.value=lj;sel.disabled=true;}}})();
   document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpi('Abaixo meta MENSAL', abM.length + ' / ' + linhas.length, abM.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Abaixo meta SEMANAL', abS.length + ' / ' + linhas.length, abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal?.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal?.total_geral || 0), 'ok')].join('');
   state._abM = abM; state._abS = abS;
   document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(abM, document.getElementById('filtroLojaPanelM').value);
@@ -224,7 +366,7 @@ document.getElementById('uploadBar').addEventListener('drop', e => { if (e.dataT
 document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(x => x.classList.remove('active')); t.classList.add('active'); state.tabAtiva = t.dataset.tab; renderTabela(); }));
 ['filtroLoja','filtroEspaco','filtroBusca','filtroStatus'].forEach(id => document.getElementById(id).addEventListener('input', renderTabela));
 ['filtroLojaPanelM','filtroLojaPanelS'].forEach(id => document.getElementById(id).addEventListener('change', () => { if (state._abM) document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(state._abM, document.getElementById('filtroLojaPanelM').value); if (state._abS) document.getElementById('panelLojaSemanal').innerHTML = renderConsolidadoPorEspaco(state._abS, document.getElementById('filtroLojaPanelS').value); }));
-carregarDados();
+/* carregarDados sera chamado por aplicarSessao() apos login */
 </script>
 </body>
 </html>

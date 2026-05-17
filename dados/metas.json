@@ -1,6 +1,6 @@
 {
-  "_observacao": "Metas oficiais (modelo_metas_v2.xlsx) - 181 marcas",
-  "_atualizado_em": "2026-05-17T22:54:58.872Z",
+  "_observacao": "Metas oficiais (modelo_metas_v2.xlsx) - 160 marcas unicas (deduped de 181)",
+  "_atualizado_em": "2026-05-17T23:52:56.681Z",
   "_origem": "modelo_metas_v2.xlsx",
   "metas": [
     {
@@ -82,56 +82,7 @@
     },
     {
       "loja": "NS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
       "marca": "@belvera26",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Scarpanoficial",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "NS",
-      "marca": "Oticaevox",
       "tipo_espaco": "Prateleira",
       "meta_mensal": 400,
       "meta_semanal": 1450
@@ -198,13 +149,6 @@
       "tipo_espaco": "Box Superior",
       "meta_mensal": 600,
       "meta_semanal": 2500
-    },
-    {
-      "loja": "RS",
-      "marca": "Donna Zu moda Feminina",
-      "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
     },
     {
       "loja": "RS",
@@ -278,13 +222,6 @@
     },
     {
       "loja": "RS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 800,
-      "meta_semanal": 3000
-    },
-    {
-      "loja": "RS",
       "marca": "Canindé@",
       "tipo_espaco": "Box Inferior Alto",
       "meta_mensal": 600,
@@ -314,29 +251,8 @@
     {
       "loja": "RS",
       "marca": "Dress tutus",
-      "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
-    },
-    {
-      "loja": "RS",
-      "marca": "Florescendo",
-      "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
-    },
-    {
-      "loja": "RS",
-      "marca": "Dress tutus",
       "tipo_espaco": "Box Inferior Largo",
       "meta_mensal": 600,
-      "meta_semanal": 2400
-    },
-    {
-      "loja": "RS",
-      "marca": "Florescendo",
-      "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
       "meta_semanal": 2400
     },
     {
@@ -439,24 +355,10 @@
     },
     {
       "loja": "RS",
-      "marca": "toy boy",
-      "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
-    },
-    {
-      "loja": "RS",
       "marca": "lufaresemijoias",
       "tipo_espaco": "Bandeja",
       "meta_mensal": 650,
       "meta_semanal": 2400
-    },
-    {
-      "loja": "RS",
-      "marca": "toy boy",
-      "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
     },
     {
       "loja": "RS",
@@ -649,13 +551,6 @@
     },
     {
       "loja": "RS",
-      "marca": "ESSE ACESSORIOS",
-      "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
-    },
-    {
-      "loja": "RS",
       "marca": "Eleita moda feminina",
       "tipo_espaco": "Arara",
       "meta_mensal": 1300,
@@ -796,13 +691,6 @@
     },
     {
       "loja": "BS",
-      "marca": "takemodafeminina",
-      "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
-    },
-    {
-      "loja": "BS",
       "marca": "valenttinestyle",
       "tipo_espaco": "Arara",
       "meta_mensal": 1200,
@@ -825,20 +713,6 @@
     {
       "loja": "BS",
       "marca": "Donna Zu moda Feminina",
-      "tipo_espaco": "Arara Destaque",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
-    },
-    {
-      "loja": "BS",
-      "marca": "Dream Closet",
-      "tipo_espaco": "Arara Destaque",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
-    },
-    {
-      "loja": "BS",
-      "marca": "Dream Closet",
       "tipo_espaco": "Arara Destaque",
       "meta_mensal": 1600,
       "meta_semanal": 6000
@@ -874,13 +748,6 @@
     {
       "loja": "BS",
       "marca": "Oticaevox",
-      "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
-    },
-    {
-      "loja": "BS",
-      "marca": "Florescendo",
       "tipo_espaco": "Bandeja",
       "meta_mensal": 650,
       "meta_semanal": 2450
@@ -1196,20 +1063,6 @@
     {
       "loja": "BS",
       "marca": "Tanoka Cerâmicas  Joias em porcelana",
-      "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
-    },
-    {
-      "loja": "BS",
-      "marca": "Oticaevox",
-      "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
-    },
-    {
-      "loja": "BS",
-      "marca": "Oticaevox",
       "tipo_espaco": "Box Superior",
       "meta_mensal": 650,
       "meta_semanal": 2450

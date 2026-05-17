@@ -51,6 +51,27 @@ def login():
         print('ERRO: Login falhou', flush=True)
     return ok
 
+def parse_valor(s):
+    """Converte string monetaria BR ou US para float (detecta formato).
+    Aceita 'R$ 1.234,56' (BR) e 'R$ 1,234.56' (US)."""
+    s = (s or '').replace('R$', '').replace('\u00a0', '').replace(' ', '').strip()
+    if not s:
+        return 0.0
+    has_comma = ',' in s
+    has_dot = '.' in s
+    if has_comma and has_dot:
+        if s.rfind(',') > s.rfind('.'):
+            s = s.replace('.', '').replace(',', '.')
+        else:
+            s = s.replace(',', '')
+    elif has_comma:
+        s = s.replace(',', '.')
+    try:
+        return float(s)
+    except ValueError:
+        return 0.0
+
+
 def coletar_relatorio(data_ini, data_fim):
     registros = []
     page = 1
@@ -82,14 +103,14 @@ def coletar_relatorio(data_ini, data_fim):
                 if 'kv-grid-group' in c0_classes:
                     loja_atual = cells[0].get_text(strip=True)
                 expositor = cells[1].get_text(strip=True)
-                total_str = cells[2].get_text(strip=True).replace('R$', '').replace('.', '').replace(',', '.').strip()
+                total_str = cells[2].get_text(strip=True)
                 cupons_str = cells[3].get_text(strip=True)
-                ticket_str = cells[4].get_text(strip=True).replace('R$', '').replace('.', '').replace(',', '.').strip()
+                ticket_str = cells[4].get_text(strip=True)
                 itens_str = cells[5].get_text(strip=True)
                 try:
-                    total = float(total_str) if total_str else 0.0
+                    total = parse_valor(total_str)
                     cupons = int(cupons_str) if cupons_str.isdigit() else 0
-                    ticket = float(ticket_str) if ticket_str else 0.0
+                    ticket = parse_valor(ticket_str)
                     itens = int(itens_str) if itens_str.isdigit() else 0
                 except Exception:
                     total, cupons, ticket, itens = 0.0, 0, 0.0, 0

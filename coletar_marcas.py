@@ -213,7 +213,7 @@ def coletar_e_salvar(data_ini_dt, data_fim_dt, caminho_saida, rotulo):
     lojas, marcas, total_geral = agrupar(registros)
     payload = {
         'tipo': rotulo,
-        'data_coleta': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'data_coleta': agora_br().strftime('%Y-%m-%d %H:%M:%S'),
         'periodo_ini': data_ini,
         'periodo_fim': data_fim,
         'total_geral': round(total_geral, 2),

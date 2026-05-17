@@ -67,22 +67,10 @@ tr:hover { background: #1f2a3d; }
 <div class="kpi-row" id="kpiRow"></div>
 
 <div class="panels">
-  <div class="panel">
-    <h2>Marcas abaixo da meta por loja (Mensal)</h2>
-    <div id="panelLojaMensal"></div>
-  </div>
-  <div class="panel">
-    <h2>Marcas abaixo da meta por tipo de espaco (Mensal)</h2>
-    <div id="panelEspacoMensal"></div>
-  </div>
-  <div class="panel">
-    <h2>Marcas abaixo da meta por loja (Semanal)</h2>
-    <div id="panelLojaSemanal"></div>
-  </div>
-  <div class="panel">
-    <h2>Marcas abaixo da meta por tipo de espaco (Semanal)</h2>
-    <div id="panelEspacoSemanal"></div>
-  </div>
+  <div class="panel"><h2>Marcas abaixo da meta por loja (Mensal)</h2><div id="panelLojaMensal"></div></div>
+  <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Mensal)</h2><div id="panelEspacoMensal"></div></div>
+  <div class="panel"><h2>Marcas abaixo da meta por loja (Semanal)</h2><div id="panelLojaSemanal"></div></div>
+  <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Semanal)</h2><div id="panelEspacoSemanal"></div></div>
 </div>
 
 <div class="tabs">
@@ -105,8 +93,7 @@ tr:hover { background: #1f2a3d; }
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
 function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().trim(); }
 function fmt(v) { return 'R$ ' + (v||0).toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2}); }
-function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/./g,'').replace(',','.')) || 0; }
-function sigla(nome) { const n = norm(nome); if (n.includes('rio sul')) return 'RS'; if (n.includes('barra')) return 'BS'; if (n.includes('norte')) return 'NS'; return nome; }
+function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
 let state = { metas: [], mensal: null, semanal: null, tabAtiva: 'comparativo' };
 
@@ -115,7 +102,8 @@ async function carregarDados() {
   try {
     const localMetas = localStorage.getItem('metas_override');
     if (localMetas) {
-      state.metas = JSON.parse(localMetas).metas || JSON.parse(localMetas);
+      const parsed = JSON.parse(localMetas);
+      state.metas = parsed.metas || parsed;
       document.getElementById('uploadInfo').innerHTML = '<strong style="color:#ffb74d">Usando metas locais (substituidas via upload)</strong> - <a href="#" id="limparOverride" style="color:#4fc3f7">limpar e usar do repositorio</a>';
       document.getElementById('limparOverride')?.addEventListener('click', e => { e.preventDefault(); localStorage.removeItem('metas_override'); location.reload(); });
     } else {
@@ -124,194 +112,105 @@ async function carregarDados() {
       state.metas = j.metas || [];
     }
   } catch(e) { console.error('metas', e); state.metas = []; }
-  
   try {
     const hoje = new Date();
     const ym = hoje.getFullYear() + '-' + String(hoje.getMonth()+1).padStart(2,'0');
     const r = await fetch('dados/relatorio_mensal_' + ym + '.json?t=' + ts);
     state.mensal = await r.json();
-  } catch(e) { console.error('mensal', e); state.mensal = { por_loja_marca: {}, total_geral: 0 }; }
-  
+  } catch(e) { console.error('mensal', e); state.mensal = { marcas: {}, total_geral: 0 }; }
   try {
     const r = await fetch('dados/relatorio_semanal_atual.json?t=' + ts);
     state.semanal = await r.json();
-  } catch(e) { console.error('semanal', e); state.semanal = { por_loja_marca: {}, total_geral: 0 }; }
-  
+  } catch(e) { console.error('semanal', e); state.semanal = { marcas: {}, total_geral: 0 }; }
   render();
 }
 
+function iterarMarcas(snapshot) {
+  if (!snapshot || !snapshot.marcas) return [];
+  return Object.values(snapshot.marcas);
+}
+
 function getVenda(snapshot, lojaSigla, marca) {
-  if (!snapshot || !snapshot.por_loja_marca) return 0;
-  const lojas = snapshot.por_loja_marca;
-  for (const lojaNome in lojas) {
-    if (sigla(lojaNome) === lojaSigla) {
-      const marcas = lojas[lojaNome];
-      for (const m in marcas) {
-        if (norm(m) === norm(marca)) return marcas[m];
-      }
-    }
+  const marcaNorm = norm(marca);
+  for (const m of iterarMarcas(snapshot)) {
+    if (m.loja_sigla === lojaSigla && (m.marca_normalizada === marcaNorm || norm(m.marca) === marcaNorm)) return m.total || 0;
   }
   return 0;
 }
 
-function listarMarcasMoombox(snapshot) {
-  const out = [];
-  if (!snapshot || !snapshot.por_loja_marca) return out;
-  for (const lojaNome in snapshot.por_loja_marca) {
-    const lojaSig = sigla(lojaNome);
-    for (const marca in snapshot.por_loja_marca[lojaNome]) {
-      out.push({ loja: lojaSig, marca, valor: snapshot.por_loja_marca[lojaNome][marca] });
-    }
-  }
-  return out;
-}
-
 function calcLinhas() {
   return state.metas.map(m => {
-    const vendaM = getVenda(state.mensal, m.loja, m.marca);
-    const vendaS = getVenda(state.semanal, m.loja, m.marca);
-    return {
-      loja: m.loja,
-      marca: m.marca,
-      tipo_espaco: m.tipo_espaco,
-      meta_mensal: m.meta_mensal,
-      venda_mensal: vendaM,
-      saldo_mensal: m.meta_mensal - vendaM,
-      pct_mensal: m.meta_mensal > 0 ? (vendaM / m.meta_mensal) * 100 : 0,
-      meta_semanal: m.meta_semanal,
-      venda_semanal: vendaS,
-      saldo_semanal: m.meta_semanal - vendaS,
-      pct_semanal: m.meta_semanal > 0 ? (vendaS / m.meta_semanal) * 100 : 0
-    };
+    const vM = getVenda(state.mensal, m.loja, m.marca);
+    const vS = getVenda(state.semanal, m.loja, m.marca);
+    return { loja: m.loja, marca: m.marca, tipo_espaco: m.tipo_espaco, meta_mensal: m.meta_mensal, venda_mensal: vM, saldo_mensal: m.meta_mensal - vM, pct_mensal: m.meta_mensal > 0 ? (vM / m.meta_mensal) * 100 : 0, meta_semanal: m.meta_semanal, venda_semanal: vS, saldo_semanal: m.meta_semanal - vS, pct_semanal: m.meta_semanal > 0 ? (vS / m.meta_semanal) * 100 : 0 };
   });
 }
 
 function marcasSemMeta() {
-  const todas = [...listarMarcasMoombox(state.mensal), ...listarMarcasMoombox(state.semanal)];
   const setMetas = new Set(state.metas.map(m => m.loja + '|' + norm(m.marca)));
   const mapa = {};
-  for (const r of todas) {
-    const k = r.loja + '|' + norm(r.marca);
-    if (!setMetas.has(k)) {
-      if (!mapa[k]) mapa[k] = { loja: r.loja, marca: r.marca, mensal: 0, semanal: 0 };
-    }
-  }
-  for (const r of listarMarcasMoombox(state.mensal)) { const k = r.loja + '|' + norm(r.marca); if (mapa[k]) mapa[k].mensal = r.valor; }
-  for (const r of listarMarcasMoombox(state.semanal)) { const k = r.loja + '|' + norm(r.marca); if (mapa[k]) mapa[k].semanal = r.valor; }
+  for (const r of iterarMarcas(state.mensal)) { const k = r.loja_sigla + '|' + (r.marca_normalizada || norm(r.marca)); if (!setMetas.has(k)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].mensal = r.total; } }
+  for (const r of iterarMarcas(state.semanal)) { const k = r.loja_sigla + '|' + (r.marca_normalizada || norm(r.marca)); if (!setMetas.has(k)) { if (!mapa[k]) mapa[k] = { loja: r.loja_sigla, marca: r.marca, mensal: 0, semanal: 0 }; mapa[k].semanal = r.total; } }
   return Object.values(mapa).sort((a,b) => b.mensal - a.mensal);
 }
 
 function render() {
   const linhas = calcLinhas();
-  const abaixoMensal = linhas.filter(l => l.pct_mensal < 100);
-  const abaixoSemanal = linhas.filter(l => l.pct_semanal < 100);
-  
-  const dataRef = state.mensal?.gerado_em || new Date().toISOString();
-  document.getElementById('subtitle').innerText = 'Atualizado em: ' + new Date(dataRef).toLocaleString('pt-BR') + ' - ' + state.metas.length + ' marcas cadastradas';
-  
-  document.getElementById('kpiRow').innerHTML = [
-    kpi('Marcas com meta', state.metas.length, 'ok'),
-    kpi('Abaixo meta MENSAL', abaixoMensal.length + ' / ' + linhas.length, abaixoMensal.length > linhas.length/2 ? 'danger' : 'warn'),
-    kpi('Abaixo meta SEMANAL', abaixoSemanal.length + ' / ' + linhas.length, abaixoSemanal.length > linhas.length/2 ? 'danger' : 'warn'),
-    kpi('Vendas total mensal', fmt(state.mensal?.total_geral || 0), 'ok'),
-    kpi('Vendas total semanal', fmt(state.semanal?.total_geral || 0), 'ok')
-  ].join('');
-  
-  document.getElementById('panelLojaMensal').innerHTML = renderAgrupado(abaixoMensal, 'loja');
-  document.getElementById('panelEspacoMensal').innerHTML = renderAgrupado(abaixoMensal, 'tipo_espaco');
-  document.getElementById('panelLojaSemanal').innerHTML = renderAgrupado(abaixoSemanal, 'loja');
-  document.getElementById('panelEspacoSemanal').innerHTML = renderAgrupado(abaixoSemanal, 'tipo_espaco');
-  
+  const abM = linhas.filter(l => l.pct_mensal < 100);
+  const abS = linhas.filter(l => l.pct_semanal < 100);
+  const dc = state.mensal?.data_coleta || '';
+  const sm = state.semanal?.periodo_ini && state.semanal?.periodo_fim ? ' - Semana: ' + state.semanal.periodo_ini + ' a ' + state.semanal.periodo_fim : '';
+  document.getElementById('subtitle').innerText = 'Coleta: ' + dc + ' - ' + state.metas.length + ' marcas com meta' + sm;
+  document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpi('Abaixo meta MENSAL', abM.length + ' / ' + linhas.length, abM.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Abaixo meta SEMANAL', abS.length + ' / ' + linhas.length, abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal?.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal?.total_geral || 0), 'ok')].join('');
+  document.getElementById('panelLojaMensal').innerHTML = renderAgrupado(abM, 'loja');
+  document.getElementById('panelEspacoMensal').innerHTML = renderAgrupado(abM, 'tipo_espaco');
+  document.getElementById('panelLojaSemanal').innerHTML = renderAgrupado(abS, 'loja');
+  document.getElementById('panelEspacoSemanal').innerHTML = renderAgrupado(abS, 'tipo_espaco');
   popularFiltroEspaco(linhas);
   renderTabela();
 }
 
 function kpi(lbl, val, cls) { return '<div class="kpi ' + cls + '"><div class="lbl">' + lbl + '</div><div class="val">' + val + '</div></div>'; }
 
-function renderAgrupado(arr, campo) {
-  const grp = {};
-  for (const l of arr) { grp[l[campo]] = (grp[l[campo]] || 0) + 1; }
-  const entries = Object.entries(grp).sort((a,b) => b[1] - a[1]);
-  if (entries.length === 0) return '<div class="empty">Nenhuma marca abaixo da meta</div>';
-  return entries.map(([k,v]) => {
-    const lbl = campo === 'loja' ? (LOJA_NOMES[k] || k) : k;
-    return '<div class="panel-row"><span class="nm">' + lbl + '</span><span class="ct">' + v + '</span></div>';
-  }).join('');
-}
+function renderAgrupado(arr, campo) { const g = {}; for (const l of arr) g[l[campo]] = (g[l[campo]] || 0) + 1; const e = Object.entries(g).sort((a,b) => b[1] - a[1]); if (e.length === 0) return '<div class="empty">Nenhuma marca abaixo da meta</div>'; return e.map(([k,v]) => { const lbl = campo === 'loja' ? (LOJA_NOMES[k] || k) : k; return '<div class="panel-row"><span class="nm">' + lbl + '</span><span class="ct">' + v + '</span></div>'; }).join(''); }
 
-function popularFiltroEspaco(linhas) {
-  const sel = document.getElementById('filtroEspaco');
-  const valAtual = sel.value;
-  const tipos = [...new Set(linhas.map(l => l.tipo_espaco))].sort();
-  sel.innerHTML = '<option value="">Todos os tipos</option>' + tipos.map(t => '<option>' + t + '</option>').join('');
-  sel.value = valAtual;
-}
+function popularFiltroEspaco(linhas) { const sel = document.getElementById('filtroEspaco'); const va = sel.value; const t = [...new Set(linhas.map(l => l.tipo_espaco))].sort(); sel.innerHTML = '<option value="">Todos os tipos</option>' + t.map(x => '<option>' + x + '</option>').join(''); sel.value = va; }
 
 function renderTabela() {
-  const wrap = document.getElementById('tableWrap');
+  const w = document.getElementById('tableWrap');
   if (state.tabAtiva === 'sem_meta') {
-    const sem = marcasSemMeta();
-    if (sem.length === 0) { wrap.innerHTML = '<div class="empty">Todas as marcas do Moombox possuem meta cadastrada</div>'; return; }
-    wrap.innerHTML = '<table><thead><tr><th>Loja</th><th>Marca</th><th>Venda mensal</th><th>Venda semanal</th></tr></thead><tbody>' +
-      sem.map(r => '<tr><td><span class="loja-badge loja-' + r.loja + '">' + r.loja + '</span></td><td>' + r.marca + '</td><td>' + fmt(r.mensal) + '</td><td>' + fmt(r.semanal) + '</td></tr>').join('') + '</tbody></table>';
+    const s = marcasSemMeta();
+    if (s.length === 0) { w.innerHTML = '<div class="empty">Todas as marcas do Moombox possuem meta cadastrada</div>'; return; }
+    w.innerHTML = '<table><thead><tr><th>Loja</th><th>Marca</th><th>Venda mensal</th><th>Venda semanal</th></tr></thead><tbody>' + s.map(r => '<tr><td><span class="loja-badge loja-' + r.loja + '">' + r.loja + '</span></td><td>' + r.marca + '</td><td>' + fmt(r.mensal) + '</td><td>' + fmt(r.semanal) + '</td></tr>').join('') + '</tbody></table>';
     return;
   }
   let linhas = calcLinhas();
-  const fL = document.getElementById('filtroLoja').value;
-  const fE = document.getElementById('filtroEspaco').value;
-  const fB = norm(document.getElementById('filtroBusca').value);
-  const fS = document.getElementById('filtroStatus').value;
+  const fL = document.getElementById('filtroLoja').value, fE = document.getElementById('filtroEspaco').value, fB = norm(document.getElementById('filtroBusca').value), fS = document.getElementById('filtroStatus').value;
   if (fL) linhas = linhas.filter(l => l.loja === fL);
   if (fE) linhas = linhas.filter(l => l.tipo_espaco === fE);
   if (fB) linhas = linhas.filter(l => norm(l.marca).includes(fB));
   if (fS === 'abaixo') linhas = linhas.filter(l => l.pct_mensal < 100);
   if (fS === 'atingido') linhas = linhas.filter(l => l.pct_mensal >= 100);
   linhas.sort((a,b) => a.pct_mensal - b.pct_mensal);
-  if (linhas.length === 0) { wrap.innerHTML = '<div class="empty">Nenhuma marca encontrada com os filtros aplicados</div>'; return; }
-  wrap.innerHTML = '<table><thead><tr><th>Loja</th><th>Marca</th><th>Espaco</th><th colspan="3">MENSAL</th><th colspan="3">SEMANAL</th></tr><tr><th></th><th></th><th></th><th>Venda</th><th>Meta</th><th>Saldo</th><th>Venda</th><th>Meta</th><th>Saldo</th></tr></thead><tbody>' +
-    linhas.map(l => {
-      const clsM = l.pct_mensal >= 100 ? '' : (l.pct_mensal >= 70 ? 'warn' : 'danger');
-      const clsS = l.pct_semanal >= 100 ? '' : (l.pct_semanal >= 70 ? 'warn' : 'danger');
-      return '<tr>' +
-        '<td><span class="loja-badge loja-' + l.loja + '">' + l.loja + '</span></td>' +
-        '<td>' + l.marca + '</td>' +
-        '<td>' + l.tipo_espaco + '</td>' +
-        '<td>' + fmt(l.venda_mensal) + '</td>' +
-        '<td>' + fmt(l.meta_mensal) + '</td>' +
-        '<td><span class="bar"><span class="bar-fill ' + clsM + '" style="width:' + Math.min(l.pct_mensal,100) + '%"></span></span><span class="val-saldo ' + (l.saldo_mensal>0?'pos':'neg') + '">' + fmt(l.saldo_mensal) + '</span></td>' +
-        '<td>' + fmt(l.venda_semanal) + '</td>' +
-        '<td>' + fmt(l.meta_semanal) + '</td>' +
-        '<td><span class="bar"><span class="bar-fill ' + clsS + '" style="width:' + Math.min(l.pct_semanal,100) + '%"></span></span><span class="val-saldo ' + (l.saldo_semanal>0?'pos':'neg') + '">' + fmt(l.saldo_semanal) + '</span></td>' +
-        '</tr>';
-    }).join('') + '</tbody></table>';
+  if (linhas.length === 0) { w.innerHTML = '<div class="empty">Nenhuma marca encontrada</div>'; return; }
+  w.innerHTML = '<table><thead><tr><th>Loja</th><th>Marca</th><th>Espaco</th><th colspan="3">MENSAL</th><th colspan="3">SEMANAL</th></tr><tr><th></th><th></th><th></th><th>Venda</th><th>Meta</th><th>Saldo</th><th>Venda</th><th>Meta</th><th>Saldo</th></tr></thead><tbody>' + linhas.map(l => { const cM = l.pct_mensal >= 100 ? '' : (l.pct_mensal >= 70 ? 'warn' : 'danger'); const cS = l.pct_semanal >= 100 ? '' : (l.pct_semanal >= 70 ? 'warn' : 'danger'); return '<tr><td><span class="loja-badge loja-' + l.loja + '">' + l.loja + '</span></td><td>' + l.marca + '</td><td>' + l.tipo_espaco + '</td><td>' + fmt(l.venda_mensal) + '</td><td>' + fmt(l.meta_mensal) + '</td><td><span class="bar"><span class="bar-fill ' + cM + '" style="width:' + Math.min(l.pct_mensal,100) + '%"></span></span><span class="val-saldo ' + (l.saldo_mensal>0?'pos':'neg') + '">' + fmt(l.saldo_mensal) + '</span></td><td>' + fmt(l.venda_semanal) + '</td><td>' + fmt(l.meta_semanal) + '</td><td><span class="bar"><span class="bar-fill ' + cS + '" style="width:' + Math.min(l.pct_semanal,100) + '%"></span></span><span class="val-saldo ' + (l.saldo_semanal>0?'pos':'neg') + '">' + fmt(l.saldo_semanal) + '</span></td></tr>'; }).join('') + '</tbody></table>';
 }
 
 function lerExcel(file) {
-  const reader = new FileReader();
-  reader.onload = e => {
+  const r = new FileReader();
+  r.onload = e => {
     try {
       const wb = XLSX.read(e.target.result, { type: 'array' });
       const ws = wb.Sheets[wb.SheetNames[0]];
       const rows = XLSX.utils.sheet_to_json(ws, { defval: '' });
-      const metas = rows.map(r => {
-        const obj = {};
-        for (const k in r) {
-          const kn = norm(k);
-          if (kn === 'loja') obj.loja = r[k].toString().trim().toUpperCase();
-          else if (kn === 'marca') obj.marca = r[k].toString().trim();
-          else if (kn.includes('tipo') || kn.includes('espaco')) obj.tipo_espaco = r[k].toString().trim();
-          else if (kn.includes('mensal')) obj.meta_mensal = parseMoney(r[k]);
-          else if (kn.includes('semanal')) obj.meta_semanal = parseMoney(r[k]);
-        }
-        return obj;
-      }).filter(m => m.loja && m.marca);
-      if (metas.length === 0) { alert('Nenhuma linha valida encontrada. Verifique as colunas: Loja, Marca, Tipo de Espaco, Meta Mensal R$, Meta Semanal R$'); return; }
+      const metas = rows.map(rr => { const o = {}; for (const k in rr) { const kn = norm(k); if (kn === 'loja') o.loja = rr[k].toString().trim().toUpperCase(); else if (kn === 'marca') o.marca = rr[k].toString().trim(); else if (kn.includes('tipo') || kn.includes('espaco')) o.tipo_espaco = rr[k].toString().trim(); else if (kn.includes('mensal')) o.meta_mensal = parseMoney(rr[k]); else if (kn.includes('semanal')) o.meta_semanal = parseMoney(rr[k]); } return o; }).filter(m => m.loja && m.marca);
+      if (metas.length === 0) { alert('Nenhuma linha valida encontrada.'); return; }
       localStorage.setItem('metas_override', JSON.stringify({ metas, _origem: file.name, _data: new Date().toISOString() }));
       alert(metas.length + ' marcas carregadas com sucesso!');
       location.reload();
     } catch(err) { alert('Erro ao ler Excel: ' + err.message); }
   };
-  reader.readAsArrayBuffer(file);
+  r.readAsArrayBuffer(file);
 }
 
 document.getElementById('uploadBar').addEventListener('click', () => document.getElementById('fileInput').click());
@@ -319,15 +218,8 @@ document.getElementById('fileInput').addEventListener('change', e => { if (e.tar
 ['dragenter','dragover'].forEach(ev => document.getElementById('uploadBar').addEventListener(ev, e => { e.preventDefault(); document.getElementById('uploadBar').classList.add('dragover'); }));
 ['dragleave','drop'].forEach(ev => document.getElementById('uploadBar').addEventListener(ev, e => { e.preventDefault(); document.getElementById('uploadBar').classList.remove('dragover'); }));
 document.getElementById('uploadBar').addEventListener('drop', e => { if (e.dataTransfer.files[0]) lerExcel(e.dataTransfer.files[0]); });
-
-document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
-  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-  t.classList.add('active');
-  state.tabAtiva = t.dataset.tab;
-  renderTabela();
-}));
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(x => x.classList.remove('active')); t.classList.add('active'); state.tabAtiva = t.dataset.tab; renderTabela(); }));
 ['filtroLoja','filtroEspaco','filtroBusca','filtroStatus'].forEach(id => document.getElementById(id).addEventListener('input', renderTabela));
-
 carregarDados();
 </script>
 </body>

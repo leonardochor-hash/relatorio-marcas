@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin - Moombox</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1419; color: #e6e6e6; padding: 20px; min-height: 100vh; }
+h1 { color: #4fc3f7; font-size: 22px; margin-bottom: 20px; }
+.card { background: #1a2332; border-radius: 8px; padding: 20px; margin-bottom: 16px; border-left: 4px solid #4fc3f7; max-width: 760px; }
+.card h2 { color: #4fc3f7; font-size: 14px; text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.5px; }
+label { display: block; color: #aaa; font-size: 12px; margin-bottom: 4px; margin-top: 10px; }
+input, select { width: 100%; background: #243245; border: 1px solid #2a3a52; color: #e6e6e6; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
+button { background: #4fc3f7; color: #0f1419; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-top: 12px; }
+button:hover { background: #29b6f6; }
+.result { margin-top: 14px; background: #0f1a28; padding: 12px; border-radius: 4px; font-family: monospace; font-size: 12px; word-break: break-all; color: #66bb6a; }
+.warn { color: #ffb74d; font-size: 12px; margin-top: 8px; }
+.empty { color: #888; font-style: italic; padding: 12px; text-align: center; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { padding: 6px 8px; border-bottom: 1px solid #2a3a52; text-align: left; }
+th { color: #4fc3f7; text-transform: uppercase; font-size: 11px; }
+a { color: #4fc3f7; }
+.back { display: inline-block; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<a class="back" href="index.html">&larr; Voltar ao Dashboard</a>
+<h1>Painel Administrativo - Moombox</h1>
+
+<div class="card">
+  <h2>1. Gerar hash SHA-256 para senha</h2>
+  <p class="warn">Esta ferramenta gera o hash localmente no seu navegador. Nada e enviado para servidor. Copie o hash e cole no campo "senha_hash" do arquivo dados/usuarios.json no GitHub.</p>
+  <label>Usuario (apenas referencia)</label>
+  <input type="text" id="usr" placeholder="ex: gerente_rs">
+  <label>Senha (digite a senha desejada)</label>
+  <input type="password" id="pwd" placeholder="digite a senha">
+  <button onclick="gerar()">Gerar hash</button>
+  <div id="out" class="result" style="display:none;"></div>
+</div>
+
+<div class="card">
+  <h2>2. Log de acesso</h2>
+  <button onclick="renderLog()">Atualizar</button>
+  <button onclick="if(confirm('Limpar todo o log de acesso?')){localStorage.removeItem('acesso_log');renderLog();}" style="background:#ef5350;color:#fff;margin-left:8px;">Limpar log</button>
+  <div id="logArea" style="margin-top:12px;"></div>
+</div>
+
+<script>
+async function sha256(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+async function gerar() {
+  const u = document.getElementById('usr').value.trim();
+  const p = document.getElementById('pwd').value;
+  if (!p) { alert('Digite a senha'); return; }
+  const h = await sha256(p);
+  const out = document.getElementById('out');
+  out.style.display = 'block';
+  out.innerHTML = '<b>Usuario:</b> ' + (u||'(nao informado)') + '<br><b>Senha:</b> ' + '*'.repeat(p.length) + '<br><b>Hash SHA-256:</b><br>' + h + '<br><br><b>Linha JSON pronta para colar:</b><br><span style="color:#e6e6e6;">{ "usuario": "' + u + '", "senha_hash": "' + h + '", "tipo": "gerente", "loja": "XX", "nome": "Nome Completo" }</span>';
+  document.getElementById('pwd').value = '';
+}
+function renderLog() {
+  const log = JSON.parse(localStorage.getItem('acesso_log') || '[]');
+  const area = document.getElementById('logArea');
+  if (log.length === 0) { area.innerHTML = '<div class="empty">Nenhum acesso registrado ainda</div>'; return; }
+  area.innerHTML = '<table><thead><tr><th>Data/Hora</th><th>Usuario</th><th>Evento</th><th>Tipo</th><th>Navegador</th></tr></thead><tbody>' +
+    log.slice().reverse().map(r => '<tr><td>' + r.dt + '</td><td>' + r.usuario + '</td><td>' + r.evento + '</td><td>' + (r.tipo||'-') + '</td><td>' + (r.ua||'-').substring(0,40) + '</td></tr>').join('') +
+    '</tbody></table><p class="warn" style="margin-top:8px;">Total: ' + log.length + ' registros (armazenados localmente neste navegador)</p>';
+}
+renderLog();
+</script>
+</body>
+</html>

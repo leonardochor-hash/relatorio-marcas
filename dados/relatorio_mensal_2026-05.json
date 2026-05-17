@@ -1,27 +1,27 @@
 {
   "tipo": "mensal",
-  "data_coleta": "2026-05-17 19:56:41",
+  "data_coleta": "2026-05-17 20:16:31",
   "periodo_ini": "2026-05-01",
   "periodo_fim": "2026-05-17",
-  "total_geral": 268892.59,
+  "total_geral": 271411.19,
   "total_marcas": 166,
   "lojas": {
     "BS": {
       "nome": "Barra Shopping",
-      "total": 78460.9,
-      "cupons": 336,
+      "total": 78509.9,
+      "cupons": 337,
       "marcas": 52
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 50800.659999999996,
-      "cupons": 361,
+      "total": 50980.46,
+      "cupons": 363,
       "marcas": 49
     },
     "RS": {
       "nome": "Rio Sul",
-      "total": 139631.03,
-      "cupons": 680,
+      "total": 141920.83,
+      "cupons": 685,
       "marcas": 65
     }
   },
@@ -200,20 +200,20 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "TIDASSA",
+      "marca_normalizada": "tidassa",
+      "total": 964.1,
+      "cupons": 11,
+      "itens": 18
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "la persi",
       "marca_normalizada": "la persi",
       "total": 920.0,
       "cupons": 5,
       "itens": 6
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "TIDASSA",
-      "marca_normalizada": "tidassa",
-      "total": 915.1,
-      "cupons": 10,
-      "itens": 17
     },
     {
       "loja_sigla": "BS",
@@ -506,20 +506,20 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "Donna Zu moda Feminina",
+      "marca_normalizada": "donna zu moda feminina",
+      "total": 4606.9,
+      "cupons": 26,
+      "itens": 31
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "territorio carioca",
       "marca_normalizada": "territorio carioca",
       "total": 4497.4,
       "cupons": 24,
       "itens": 27
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "Donna Zu moda Feminina",
-      "marca_normalizada": "donna zu moda feminina",
-      "total": 4447.0,
-      "cupons": 25,
-      "itens": 30
     },
     {
       "loja_sigla": "NS",
@@ -686,20 +686,20 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "vip glam",
+      "marca_normalizada": "vip glam",
+      "total": 670.5,
+      "cupons": 14,
+      "itens": 16
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "mistura da terra brasil",
       "marca_normalizada": "mistura da terra brasil",
       "total": 660.92,
       "cupons": 4,
       "itens": 8
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "vip glam",
-      "marca_normalizada": "vip glam",
-      "total": 650.6,
-      "cupons": 13,
-      "itens": 15
     },
     {
       "loja_sigla": "NS",
@@ -940,18 +940,18 @@
       "loja_nome": "Rio Sul",
       "marca": "Florescendo",
       "marca_normalizada": "florescendo",
-      "total": 16972.0,
-      "cupons": 64,
-      "itens": 80
+      "total": 17872.0,
+      "cupons": 66,
+      "itens": 82
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
       "marca": "arrazo fashion",
       "marca_normalizada": "arrazo fashion",
-      "total": 16097.9,
-      "cupons": 23,
-      "itens": 24
+      "total": 16957.8,
+      "cupons": 24,
+      "itens": 25
     },
     {
       "loja_sigla": "RS",
@@ -976,9 +976,9 @@
       "loja_nome": "Rio Sul",
       "marca": "Like an Angel",
       "marca_normalizada": "like an angel",
-      "total": 8706.35,
-      "cupons": 15,
-      "itens": 31
+      "total": 9006.25,
+      "cupons": 16,
+      "itens": 32
     },
     {
       "loja_sigla": "RS",
@@ -1253,6 +1253,15 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
+      "marca": "eva viegas store",
+      "marca_normalizada": "eva viegas store",
+      "total": 787.0,
+      "cupons": 4,
+      "itens": 4
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
       "marca": "infoco fit",
       "marca_normalizada": "infoco fit",
       "total": 754.0,
@@ -1330,15 +1339,6 @@
       "total": 561.0,
       "cupons": 19,
       "itens": 23
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "eva viegas store",
-      "marca_normalizada": "eva viegas store",
-      "total": 557.0,
-      "cupons": 3,
-      "itens": 3
     },
     {
       "loja_sigla": "RS",

@@ -67,9 +67,9 @@ tr:hover { background: #1f2a3d; }
 <div class="kpi-row" id="kpiRow"></div>
 
 <div class="panels">
-  <div class="panel"><h2>Marcas abaixo da meta por loja (Mensal)</h2><div id="panelLojaMensal"></div></div>
+  <div class="panel"><h2>Marcas abaixo da meta por loja (Mensal) <select id="filtroLojaPanelM" style="float:right;background:#243245;color:#e6e6e6;border:1px solid #2a3a52;border-radius:4px;padding:2px 6px;font-size:11px;"><option value="">Todas</option><option value="RS">Rio Sul</option><option value="BS">Barra Shopping</option><option value="NS">NorteShopping</option></select></h2><div id="panelLojaMensal"></div></div>
   <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Mensal)</h2><div id="panelEspacoMensal"></div></div>
-  <div class="panel"><h2>Marcas abaixo da meta por loja (Semanal)</h2><div id="panelLojaSemanal"></div></div>
+  <div class="panel"><h2>Marcas abaixo da meta por loja (Semanal) <select id="filtroLojaPanelS" style="float:right;background:#243245;color:#e6e6e6;border:1px solid #2a3a52;border-radius:4px;padding:2px 6px;font-size:11px;"><option value="">Todas</option><option value="RS">Rio Sul</option><option value="BS">Barra Shopping</option><option value="NS">NorteShopping</option></select></h2><div id="panelLojaSemanal"></div></div>
   <div class="panel"><h2>Marcas abaixo da meta por tipo de espaco (Semanal)</h2><div id="panelEspacoSemanal"></div></div>
 </div>
 
@@ -91,7 +91,7 @@ tr:hover { background: #1f2a3d; }
 
 <script>
 const LOJA_NOMES = { RS: 'Rio Sul', BS: 'Barra Shopping', NS: 'NorteShopping' };
-function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[̀-ͯ]/g,'').toLowerCase().trim(); }
+function norm(s) { return (s||'').toString().normalize('NFKD').replace(/[Ì-Í¯]/g,'').toLowerCase().trim(); }
 function fmt(v) { return 'R$ ' + Math.round(v||0).toLocaleString('pt-BR', {minimumFractionDigits:0, maximumFractionDigits:0}); }
 function parseMoney(v) { if (typeof v === 'number') return v; if (!v) return 0; return parseFloat(v.toString().replace(/[^0-9,.-]/g,'').replace(/\./g,'').replace(',','.')) || 0; }
 
@@ -162,9 +162,10 @@ function render() {
   const sm = state.semanal?.periodo_ini && state.semanal?.periodo_fim ? ' - Semana: ' + state.semanal.periodo_ini + ' a ' + state.semanal.periodo_fim : '';
   document.getElementById('subtitle').innerText = 'Coleta: ' + dc + ' - ' + state.metas.length + ' marcas com meta' + sm;
   document.getElementById('kpiRow').innerHTML = [kpi('Marcas com meta', state.metas.length, 'ok'), kpi('Abaixo meta MENSAL', abM.length + ' / ' + linhas.length, abM.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Abaixo meta SEMANAL', abS.length + ' / ' + linhas.length, abS.length > linhas.length/2 ? 'danger' : 'warn'), kpi('Vendas total mensal', fmt(state.mensal?.total_geral || 0), 'ok'), kpi('Vendas total semanal', fmt(state.semanal?.total_geral || 0), 'ok')].join('');
-  document.getElementById('panelLojaMensal').innerHTML = renderAgrupado(abM, 'loja');
+  state._abM = abM; state._abS = abS;
+  document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(abM, document.getElementById('filtroLojaPanelM').value);
   document.getElementById('panelEspacoMensal').innerHTML = renderAgrupado(abM, 'tipo_espaco');
-  document.getElementById('panelLojaSemanal').innerHTML = renderAgrupado(abS, 'loja');
+  document.getElementById('panelLojaSemanal').innerHTML = renderConsolidadoPorEspaco(abS, document.getElementById('filtroLojaPanelS').value);
   document.getElementById('panelEspacoSemanal').innerHTML = renderAgrupado(abS, 'tipo_espaco');
   popularFiltroEspaco(linhas);
   renderTabela();
@@ -173,6 +174,8 @@ function render() {
 function kpi(lbl, val, cls) { return '<div class="kpi ' + cls + '"><div class="lbl">' + lbl + '</div><div class="val">' + val + '</div></div>'; }
 
 function renderAgrupado(arr, campo) { const g = {}; for (const l of arr) g[l[campo]] = (g[l[campo]] || 0) + 1; const e = Object.entries(g).sort((a,b) => b[1] - a[1]); if (e.length === 0) return '<div class="empty">Nenhuma marca abaixo da meta</div>'; return e.map(([k,v]) => { const lbl = campo === 'loja' ? (LOJA_NOMES[k] || k) : k; return '<div class="panel-row"><span class="nm">' + lbl + '</span><span class="ct">' + v + '</span></div>'; }).join(''); }
+
+function renderConsolidadoPorEspaco(arr, lojaFiltro) { const filtrado = lojaFiltro ? arr.filter(l => l.loja === lojaFiltro) : arr; if (filtrado.length === 0) return '<div class="empty">Nenhuma marca abaixo da meta</div>'; const porLoja = {}; for (const l of filtrado) { if (!porLoja[l.loja]) porLoja[l.loja] = {}; const tipo = l.tipo_espaco || '(sem tipo)'; porLoja[l.loja][tipo] = (porLoja[l.loja][tipo] || 0) + 1; } const lojas = Object.keys(porLoja).sort(); return lojas.map(loja => { const tipos = Object.entries(porLoja[loja]).sort((a,b) => b[1] - a[1]); const total = tipos.reduce((s,[,v]) => s+v, 0); const header = '<div class="panel-row" style="background:#0f1a28;font-weight:bold;border-top:1px solid #2a3a52;"><span class="nm" style="color:#4fc3f7;">' + (LOJA_NOMES[loja] || loja) + '</span><span class="ct" style="color:#ef5350;">' + total + '</span></div>'; const rows = tipos.map(([k,v]) => '<div class="panel-row" style="padding-left:18px;"><span class="nm" style="color:#aaa;font-size:13px;">' + k + '</span><span class="ct">' + v + '</span></div>').join(''); return header + rows; }).join(''); }
 
 function popularFiltroEspaco(linhas) { const sel = document.getElementById('filtroEspaco'); const va = sel.value; const TIPOS_VALIDOS = ['Arara','Bandeja','Box Inferior','Prateleira','Vitrine']; const t = [...new Set(linhas.map(l => l.tipo_espaco))].filter(x => TIPOS_VALIDOS.includes(x)).sort(); sel.innerHTML = '<option value="">Todos os tipos</option>' + t.map(x => '<option>' + x + '</option>').join(''); sel.value = va; }
 
@@ -220,6 +223,7 @@ document.getElementById('fileInput').addEventListener('change', e => { if (e.tar
 document.getElementById('uploadBar').addEventListener('drop', e => { if (e.dataTransfer.files[0]) lerExcel(e.dataTransfer.files[0]); });
 document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => { document.querySelectorAll('.tab').forEach(x => x.classList.remove('active')); t.classList.add('active'); state.tabAtiva = t.dataset.tab; renderTabela(); }));
 ['filtroLoja','filtroEspaco','filtroBusca','filtroStatus'].forEach(id => document.getElementById(id).addEventListener('input', renderTabela));
+['filtroLojaPanelM','filtroLojaPanelS'].forEach(id => document.getElementById(id).addEventListener('change', () => { if (state._abM) document.getElementById('panelLojaMensal').innerHTML = renderConsolidadoPorEspaco(state._abM, document.getElementById('filtroLojaPanelM').value); if (state._abS) document.getElementById('panelLojaSemanal').innerHTML = renderConsolidadoPorEspaco(state._abS, document.getElementById('filtroLojaPanelS').value); }));
 carregarDados();
 </script>
 </body>

@@ -84,3 +84,27 @@ No inicio de uma nova conversa, mandar:
 > "Le https://github.com/leonardochor-hash/relatorio-marcas/blob/main/CONTEXTO.md e https://github.com/leonardochor-hash/relatorio-marcas/blob/main/HISTORICO.md antes de comecar. Quero continuar de onde paramos."
 
 E depois pedir o que quiser - Claude vai ter todo o contexto necessario.
+
+## Atualizacao 2026-05-17 21:00
+
+### Mudancas recentes
+
+- **metas.json deduplicado**: 181 -> 160 marcas unicas (removidas 21 duplicatas como Oticaevox NS Prateleira repetida 6x). Commit 6435b57e
+- **Filtro tipo de espaco dinamico**: combo agora popula todos os tipos encontrados em state.metas + linhas (era hardcoded para 4 tipos: Arara, Bandeja, Box Inferior, Prateleira, Vitrine). Commit 7801c5fa
+- **marcasSemMeta com fuzzy matching**: usa norm() consistente em ambos os lados + substring bidirecional + verificacao em qualquer loja. Reduziu falsos positivos de 152 -> 60. Commit anterior
+- **getVenda com fuzzy matching**: tenta exato primeiro, depois substring bidirecional. Commit b4f9d28
+
+### Estado atual do dashboard
+
+- 160 marcas com meta (RS 75, BS 67, NS 18)
+- Vendas: R$ 271.411 mensal / R$ 80.514 semanal
+- KPIs: 92/160 mensal (RS 33, BS 47, NS 12), 155/160 semanal (RS 71, BS 66, NS 18)
+- Filtro tipo de espaco: 12 opcoes (Arara, Arara + Manequim, Arara Destaque, Bandeja, Box Gaveta, Box Inferior, Box Inferior Alto, Box Inferior Largo, Box Superior, Box Superior Largo, Prateleira, Rooftop)
+- 60 marcas em "sem meta" sao casos reais de nome divergente Excel vs Moombox - lista detalhada na sessao do chat
+
+### Pendencias mantidas
+
+- Trocar senha default "1234" dos 4 usuarios
+- Corrigir nomes no Excel para as 60 marcas em "sem meta" (lista com sugestoes ja gerada)
+- Twilio WhatsApp integration (pausado)
+- Remover credencial "admin2020b" do coletar_marcas.py linha 16 (exposta no repo publico)

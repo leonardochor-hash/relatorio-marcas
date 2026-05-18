@@ -1,9 +1,9 @@
 {
   "tipo": "mensal",
-  "data_coleta": "2026-05-17 20:16:31",
+  "data_coleta": "2026-05-18 03:08:29",
   "periodo_ini": "2026-05-01",
-  "periodo_fim": "2026-05-17",
-  "total_geral": 271411.19,
+  "periodo_fim": "2026-05-18",
+  "total_geral": 272150.99,
   "total_marcas": 166,
   "lojas": {
     "BS": {
@@ -14,14 +14,14 @@
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 50980.46,
-      "cupons": 363,
+      "total": 51120.36,
+      "cupons": 364,
       "marcas": 49
     },
     "RS": {
       "nome": "Rio Sul",
-      "total": 141920.83,
-      "cupons": 685,
+      "total": 142520.73,
+      "cupons": 687,
       "marcas": 65
     }
   },
@@ -553,9 +553,9 @@
       "loja_nome": "norteshopping",
       "marca": "Silver Joias",
       "marca_normalizada": "silver joias",
-      "total": 2282.8,
-      "cupons": 18,
-      "itens": 22
+      "total": 2422.7,
+      "cupons": 19,
+      "itens": 23
     },
     {
       "loja_sigla": "NS",
@@ -1181,6 +1181,15 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
+      "marca": "eva viegas store",
+      "marca_normalizada": "eva viegas store",
+      "total": 1007.0,
+      "cupons": 5,
+      "itens": 5
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
       "marca": "lo acessorios",
       "marca_normalizada": "lo acessorios",
       "total": 1007.0,
@@ -1204,6 +1213,15 @@
       "total": 915.2,
       "cupons": 11,
       "itens": 12
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "jambo sol e mar",
+      "marca_normalizada": "jambo sol e mar",
+      "total": 909.6,
+      "cupons": 5,
+      "itens": 4
     },
     {
       "loja_sigla": "RS",
@@ -1249,15 +1267,6 @@
       "total": 791.14,
       "cupons": 4,
       "itens": 5
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "eva viegas store",
-      "marca_normalizada": "eva viegas store",
-      "total": 787.0,
-      "cupons": 4,
-      "itens": 4
     },
     {
       "loja_sigla": "RS",
@@ -1348,15 +1357,6 @@
       "total": 545.3,
       "cupons": 6,
       "itens": 7
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "jambo sol e mar",
-      "marca_normalizada": "jambo sol e mar",
-      "total": 529.7,
-      "cupons": 4,
-      "itens": 3
     },
     {
       "loja_sigla": "RS",

@@ -60,3 +60,14 @@
   - BS "corpo em evidencia" -> corpoevioficial
   - BS "veronica lima velas e aromas" -> veronicalima_aromas
   - NS "belvera bolsas e acessorios" -> @belvera26
+
+## Atualizacao 2026-05-17 22:00
+
+- Commit **201072e9**: KPIs com hierarquia visual (compact vs big)
+  - 3 cards discretos (compact, opacity 0.7): Marcas com Meta, Vendas Total Mensal, Vendas Total Semanal
+  - 2 cards destacados (big, padding e fonte maiores + glow): Abaixo Meta Mensal, Abaixo Meta Semanal
+  - Grid ajustado para 0.7fr 1.5fr 1.5fr 0.7fr 0.7fr (responsivo no mobile)
+- Commit **dd3e94a0**: Breakdown por loja com percentual e fonte maior nos cards big
+  - Mostra fracao X/Y + percentual (ex: RS 33/75 (44%))
+  - Sigla da loja colorida (RS laranja, BS vermelho claro, NS azul claro)
+  - Fonte maior dentro dos cards big (18px na linha, 20px no numero)

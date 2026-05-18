@@ -28,3 +28,22 @@
 - Sao 181 marcas com meta (NS=25, RS=83, BS=73)
 - 4 usuarios cadastrados ainda com senha 1234 (TROCAR!)
 - Layout final: 2 paineis lado a lado (Mensal/Semanal consolidado por loja+tipo) + KPI cards com breakdown RS/BS/NS
+
+## Commits adicionais (2026-05-17 noite)
+
+| Hora | SHA | Descricao |
+|------|-----|-----------|
+| 20:32 | b4f9d28 | Fix: norm() consistente e fuzzy substring matching em getVenda |
+| 20:50 | 116e3e8/aa166aa | (anteriores) Layout 2 paineis + KPI breakdown por loja |
+| 20:54 | 6435b57e | Dedup metas.json: remove 21 duplicatas (181 -> 160) |
+| 20:58 | 7801c5fa | Fix: filtro tipo de espaco mostra todos os tipos (sem whitelist) |
+| 20:48 | (fix anterior) | marcasSemMeta: norm consistente + match exato/global/fuzzy -> 152 -> 60 sem meta |
+
+## Atualizado em 2026-05-17 21:00
+
+- Total: **160 marcas com meta unicas** (era 181 com 21 duplicatas)
+- Filtro tipo de espaco: 12 opcoes dinamicas (era 4 fixas hardcoded)
+- marcasSemMeta agora usa fuzzy matching (substring bidirecional)
+- 60 marcas restantes em "sem meta" sao casos reais de nome divergente Excel vs Moombox
+- getVenda tambem usa fuzzy matching - 125 das 160 marcas tem vendas correlacionadas
+- KPIs: 92/160 mensal (RS 33/75, BS 47/67, NS 12/18), 155/160 semanal (RS 71/75, BS 66/67, NS 18/18)

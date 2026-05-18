@@ -142,3 +142,32 @@ const wb = XLSX.utils.book_new();
 XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'SemMeta');
 XLSX.writeFile(wb, 'sem_meta.xlsx');
 \`\`\`
+
+## Atualizacao 2026-05-17 22:00 - UI Hierarquia Visual
+
+### Commit 201072e9 - KPIs compact vs big
+
+Os 5 KPIs do topo agora tem hierarquia visual clara:
+
+**Compact (discretos, opacity 0.7, padding 10px, fonte 18px):**
+- Marcas com Meta
+- Vendas Total Mensal
+- Vendas Total Semanal
+
+**Big (destacados, padding 22px, fonte 44px, glow box-shadow, fundo gradient):**
+- Abaixo Meta Mensal
+- Abaixo Meta Semanal
+
+CSS: grid-template-columns: 0.7fr 1.5fr 1.5fr 0.7fr 0.7fr (com media query mobile).
+
+### Commit dd3e94a0 - Breakdown por loja com percentual
+
+Funcao brk() agora mostra fracao e percentual:
+- Formato: `RS 33/75 (44%)`
+- Sigla colorida por loja: RS laranja (#ffb74d), BS vermelho claro (#ef9a9a), NS azul claro (#90caf9)
+- Dentro dos cards big, fonte ampliada: linha 18px, sigla 13px, numero 20px bold, percentual 14px gray
+
+### Estado final do dashboard (validado em produc)
+
+- Abaixo Meta Mensal: 92/160 -> RS 33/75 (44%), BS 47/67 (70%), NS 12/18 (67%)
+- Abaixo Meta Semanal: 155/160 -> RS 71/75 (95%), BS 66/67 (99%), NS 18/18 (100%)

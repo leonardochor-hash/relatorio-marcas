@@ -108,3 +108,37 @@ E depois pedir o que quiser - Claude vai ter todo o contexto necessario.
 - Corrigir nomes no Excel para as 60 marcas em "sem meta" (lista com sugestoes ja gerada)
 - Twilio WhatsApp integration (pausado)
 - Remover credencial "admin2020b" do coletar_marcas.py linha 16 (exposta no repo publico)
+
+## Atualizacao 2026-05-17 21:30
+
+### Export para acerto manual
+
+- Gerado arquivo **marcas_sem_meta_para_acerto.xlsx** com as 60 marcas que nao casam com nenhuma meta
+- Distribuicao: 29 NS + 15 RS + 16 BS
+- 4 abas: Todas, NS, RS, BS
+- Colunas: Loja | Marca no Moombox | Venda Mensal | Venda Semanal | Sugestao de match (automatica) | Nome correto no Excel (em branco para preencher)
+- Tamanho do arquivo: ~50KB
+
+### 7 matches certeiros identificados (correcao prioritaria no Excel)
+
+| Loja | Nome no Moombox | Nome no Excel atual |
+|------|-----------------|---------------------|
+| RS | querida margarida atelie | Atelie Querida Margarida |
+| RS | dolce vanilla | Dulce Vanilla |
+| RS | corpo em evidencia | corpoevioficial |
+| RS | PK arte non corpo | PK artenocorpo |
+| BS | corpo em evidencia | corpoevioficial |
+| BS | veronica lima velas e aromas | veronicalima_aromas |
+| NS | belvera bolsas e acessorios | @belvera26 |
+
+### Como gerar o XLSX de exportacao novamente
+
+No console do dashboard (F12), com sessao admin ativa:
+
+\`\`\`javascript
+const sem = marcasSemMeta();
+const rows = sem.map(s => ({Loja:s.loja, Marca:s.marca, VendaMensal:s.mensal, VendaSemanal:s.semanal}));
+const wb = XLSX.utils.book_new();
+XLSX.utils.book_append_sheet(wb, XLSX.utils.json_to_sheet(rows), 'SemMeta');
+XLSX.writeFile(wb, 'sem_meta.xlsx');
+\`\`\`

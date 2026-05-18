@@ -1,1127 +1,1127 @@
 {
-  "_observacao": "Metas oficiais (modelo_metas_v2.xlsx) - 160 marcas unicas (deduped de 181)",
-  "_atualizado_em": "2026-05-17T23:53:54.477Z",
+  "_observacao": "Metas oficiais (modelo_metas_v2.xlsx) - 160 marcas unicas (deduped de 181) | 2026-05-17: swap meta_mensal <-> meta_semanal (estavam invertidos na origem)",
+  "_atualizado_em": "2026-05-18T02:01:59.703Z",
   "_origem": "modelo_metas_v2.xlsx",
   "metas": [
     {
       "loja": "NS",
       "marca": "MARIMAR ACESSORIOS",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "Las veste crochet",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "renata.sababag",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "DAY BOUTIQUE | MODA FEMININA",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "Oticaevox",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "valiosaazevedo",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "usececibags",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "Isabel c z de lima",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "evissimaprata",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "misturadaterrabrasil",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "amar.nosstudio",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "@belvera26",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "Scarpanoficial",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "Aromas da Jana",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "semijoiasmulherunica",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
-      "marca": "Viva Versa | Acessórios",
+      "marca": "Viva Versa | AcessÃ³rios",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "@lmacessoriosdemoda",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "NS",
       "marca": "mag emporio",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "RS",
       "marca": "vip glam",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 600,
-      "meta_semanal": 2500
+      "meta_mensal": 2500,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "Donna Zu moda Feminina",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "@amen.cheirosquecuram",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 600,
-      "meta_semanal": 2500
+      "meta_mensal": 2500,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "Adriana Cotrim Acessorios",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 800,
-      "meta_semanal": 3000
+      "meta_mensal": 3000,
+      "meta_semanal": 800
     },
     {
       "loja": "RS",
       "marca": "corpoevioficial",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "Fitnessmode",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "heranca_da_terra",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 800,
-      "meta_semanal": 3000
+      "meta_mensal": 3000,
+      "meta_semanal": 800
     },
     {
       "loja": "RS",
       "marca": "Designer Rita Fernandes",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "Belly Baby e Kids",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
-      "marca": "Eva Viégas | Store",
+      "marca": "Eva ViÃ©gas | Store",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "PK artenocorpo",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 800,
-      "meta_semanal": 3000
+      "meta_mensal": 3000,
+      "meta_semanal": 800
     },
     {
       "loja": "RS",
       "marca": "Oticaevox",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 800,
-      "meta_semanal": 3000
+      "meta_mensal": 3000,
+      "meta_semanal": 800
     },
     {
       "loja": "RS",
       "marca": "@Versaechique",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
-      "marca": "Canindé@",
+      "marca": "CanindÃ©@",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
-      "marca": "Fávoly",
+      "marca": "FÃ¡voly",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "Dress tutus",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Florescendo",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "Dress tutus",
       "tipo_espaco": "Box Inferior Largo",
-      "meta_mensal": 600,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 600
     },
     {
       "loja": "RS",
       "marca": "sollasi",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "mag emporio",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "esotedecor",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "esotedecor",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "atelier jessica anizio",
       "tipo_espaco": "Box Inferior Largo",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "Juliana Slama Joias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "chique  atelier",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "lo acessorios",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "pmg.modaintima",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Use.Bahar",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "finapellecouros",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Atelie Querida Margarida",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "toy boy",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "cg joias mistica",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "lufaresemijoias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "eirojoias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "marliazevedofitness",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "LES AMIES SEMIJOIAS",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "fapah_",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
-      "marca": "Artê Peças Originais",
+      "marca": "ArtÃª PeÃ§as Originais",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "sungasjoaobrito",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "andorrasemijoia",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "glaser_arte",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
-      "marca": "Onaê",
+      "marca": "OnaÃª",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "Vestido de Colorir",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Aquarius Pratas",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "Lelinha Cardoso",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "ceramicas_rosemonteiro",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
-      "marca": "Ori Aiê",
+      "marca": "Ori AiÃª",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
-      "marca": "Ori Aiê",
+      "marca": "Ori AiÃª",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "@euritafernandes",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Eluizas",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "Atelie Martha Martins",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "Magri Pora",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "PROJETO CRIA",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "@_eublessingstore_",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "omera",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 350,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 350
     },
     {
       "loja": "RS",
       "marca": "acessorios da tuca",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
       "marca": "ESSE ACESSORIOS",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "RS",
-      "marca": "Ateliê Vânia Toledo Martins",
+      "marca": "AteliÃª VÃ¢nia Toledo Martins",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "RS",
       "marca": "prata_carioca_",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "RS",
       "marca": "ESSE ACESSORIOS",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "RS",
       "marca": "Eleita moda feminina",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
       "marca": "lepipa_",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
-      "marca": "Dandá Moda Brasileira",
+      "marca": "DandÃ¡ Moda Brasileira",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
       "marca": "DAY BOUTIQUE | MODA FEMININA",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
       "marca": "valenttinestyle",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
       "marca": "arrazo fashion",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Damari luxe",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "bezzoura",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1300,
-      "meta_semanal": 5000
+      "meta_mensal": 5000,
+      "meta_semanal": 1300
     },
     {
       "loja": "RS",
       "marca": "Dulce Vanilla",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Jambo Sol e Mar",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Di Maria store",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Dream Closet",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Like an Angel",
       "tipo_espaco": "Arara + Manequim",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "RS",
       "marca": "Oticaevox",
       "tipo_espaco": "Prateleira",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "RS",
       "marca": "Composite",
       "tipo_espaco": "Rooftop",
-      "meta_mensal": 400,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 400
     },
     {
       "loja": "BS",
       "marca": "takemodafeminina",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "usecamale.rj",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "Noxie by RJ",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "Di Maria store",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "corpoevioficial",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "valenttinestyle",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "arrazo fashion",
       "tipo_espaco": "Arara",
-      "meta_mensal": 1200,
-      "meta_semanal": 4500
+      "meta_mensal": 4500,
+      "meta_semanal": 1200
     },
     {
       "loja": "BS",
       "marca": "Dream Closet",
       "tipo_espaco": "Arara Destaque",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "BS",
       "marca": "Donna Zu moda Feminina",
       "tipo_espaco": "Arara Destaque",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "BS",
       "marca": "Like an Angel",
       "tipo_espaco": "Arara Destaque",
-      "meta_mensal": 1600,
-      "meta_semanal": 6000
+      "meta_mensal": 6000,
+      "meta_semanal": 1600
     },
     {
       "loja": "BS",
       "marca": "mailly",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Florescendo",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "veronicalima_aromas",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Oticaevox",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "vip glam",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "ednessakarineacessorios",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "semijoiasdafe93",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "La Persi",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Eluizas",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Alsallam.comercial",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Oie.joias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Praise Joias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Olhar de Diamante",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "carlapenteadopratas",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "tuluijoias",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Use.Bahar",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Auati Atelier",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "the gift presentes",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Magri Pora",
       "tipo_espaco": "Bandeja",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "beads_top",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "Zure",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "aprecie.velas_e_artes",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "Atelier.rochajr",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "aromazeessenciaz",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "atelie inox",
       "tipo_espaco": "Box Gaveta",
-      "meta_mensal": 300,
-      "meta_semanal": 1200
+      "meta_mensal": 1200,
+      "meta_semanal": 300
     },
     {
       "loja": "BS",
       "marca": "renata.sababag",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "morena.stillo2022",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "ateliedali.croche",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "lojaspatt",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "lojaserhumaninho",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "Dress tutus",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "Lelinha Cardoso",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "useloveforgym",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "Use Liberty",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "maresia.use",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "glaser_arte",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "finapellecouros",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
-      "marca": "Ateliê Monique Marques",
+      "marca": "AteliÃª Monique Marques",
       "tipo_espaco": "Box Inferior",
-      "meta_mensal": 450,
-      "meta_semanal": 1450
+      "meta_mensal": 1450,
+      "meta_semanal": 450
     },
     {
       "loja": "BS",
       "marca": "montierboutique",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "Maybi.brand",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "jord_brand",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "soniamartinsmultimarcas",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "shopslabella",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "Peediama",
       "tipo_espaco": "Box Inferior Alto",
-      "meta_mensal": 800,
-      "meta_semanal": 3200
+      "meta_mensal": 3200,
+      "meta_semanal": 800
     },
     {
       "loja": "BS",
       "marca": "Designer Rita Fernandes",
       "tipo_espaco": "Box Inferior Largo",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "atelier jessica anizio",
       "tipo_espaco": "Box Inferior Largo",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Nael Rodrigues",
       "tipo_espaco": "Box Inferior Largo",
-      "meta_mensal": 650,
-      "meta_semanal": 2400
+      "meta_mensal": 2400,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Oticaevox",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
-      "marca": "Tanoka Cerâmicas  Joias em porcelana",
+      "marca": "Tanoka CerÃ¢micas  Joias em porcelana",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "RS.ARTS",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Tucabones",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Peediama",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Sandroca_croche",
       "tipo_espaco": "Box Superior",
-      "meta_mensal": 650,
-      "meta_semanal": 2450
+      "meta_mensal": 2450,
+      "meta_semanal": 650
     },
     {
       "loja": "BS",
       "marca": "Adriana Cotrim Acessorios",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 950,
-      "meta_semanal": 3450
+      "meta_mensal": 3450,
+      "meta_semanal": 950
     },
     {
       "loja": "BS",
       "marca": "mag emporio",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 950,
-      "meta_semanal": 3450
+      "meta_mensal": 3450,
+      "meta_semanal": 950
     },
     {
       "loja": "BS",
       "marca": "brasilie.art",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 950,
-      "meta_semanal": 3450
+      "meta_mensal": 3450,
+      "meta_semanal": 950
     },
     {
       "loja": "BS",
       "marca": "Oticaevox",
       "tipo_espaco": "Box Superior Largo",
-      "meta_mensal": 950,
-      "meta_semanal": 3450
+      "meta_mensal": 3450,
+      "meta_semanal": 950
     }
   ]
 }

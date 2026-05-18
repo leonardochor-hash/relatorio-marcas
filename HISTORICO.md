@@ -47,3 +47,16 @@
 - 60 marcas restantes em "sem meta" sao casos reais de nome divergente Excel vs Moombox
 - getVenda tambem usa fuzzy matching - 125 das 160 marcas tem vendas correlacionadas
 - KPIs: 92/160 mensal (RS 33/75, BS 47/67, NS 12/18), 155/160 semanal (RS 71/75, BS 66/67, NS 18/18)
+
+## Atualizacao 2026-05-17 21:30
+
+- Commits 9ba7e5cb e 1321a469: atualizacao da propria documentacao (HISTORICO + CONTEXTO)
+- Exportado arquivo **marcas_sem_meta_para_acerto.xlsx** com as 60 marcas em "sem meta" (29 NS + 15 RS + 16 BS) com colunas: Loja, Marca no Moombox, Venda Mensal, Venda Semanal, Sugestao de match, Nome correto (para preenchimento)
+- Identificados 7 matches certeiros para revisao no Excel:
+  - RS "querida margarida atelie" -> Atelie Querida Margarida
+  - RS "dolce vanilla" -> Dulce Vanilla
+  - RS "corpo em evidencia" -> corpoevioficial
+  - RS "PK arte non corpo" -> PK artenocorpo
+  - BS "corpo em evidencia" -> corpoevioficial
+  - BS "veronica lima velas e aromas" -> veronicalima_aromas
+  - NS "belvera bolsas e acessorios" -> @belvera26

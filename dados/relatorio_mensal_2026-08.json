@@ -1,21 +1,21 @@
 {
   "tipo": "mensal",
-  "data_coleta": "2026-08-15 23:53:49",
+  "data_coleta": "2026-08-16 23:53:43",
   "periodo_ini": "2026-08-01",
-  "periodo_fim": "2026-08-15",
-  "total_geral": 117296.05,
-  "total_marcas": 82,
+  "periodo_fim": "2026-08-16",
+  "total_geral": 123542.39,
+  "total_marcas": 83,
   "lojas": {
     "BS": {
       "nome": "Barra Shopping",
-      "total": 64335.909999999996,
-      "cupons": 286,
-      "marcas": 44
+      "total": 67892.19999999998,
+      "cupons": 303,
+      "marcas": 45
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 52960.13999999999,
-      "cupons": 299,
+      "total": 55650.189999999995,
+      "cupons": 310,
       "marcas": 38
     }
   },
@@ -25,18 +25,18 @@
       "loja_nome": "Barra Shopping",
       "marca": "dream closet",
       "marca_normalizada": "dream closet",
-      "total": 7753.11,
-      "cupons": 19,
-      "itens": 23
+      "total": 8802.91,
+      "cupons": 22,
+      "itens": 25
     },
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 6654.7,
-      "cupons": 34,
-      "itens": 44
+      "total": 6974.5,
+      "cupons": 35,
+      "itens": 46
     },
     {
       "loja_sigla": "BS",
@@ -59,6 +59,15 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "Florescendo",
+      "marca_normalizada": "florescendo",
+      "total": 3768.0,
+      "cupons": 16,
+      "itens": 18
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "zure",
       "marca_normalizada": "zure",
       "total": 3532.8,
@@ -68,20 +77,20 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "Florescendo",
-      "marca_normalizada": "florescendo",
-      "total": 3118.0,
-      "cupons": 15,
-      "itens": 17
+      "marca": "Adriana Cotrim Acessorios",
+      "marca_normalizada": "adriana cotrim acessorios",
+      "total": 3047.1,
+      "cupons": 13,
+      "itens": 18
     },
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "Adriana Cotrim Acessorios",
-      "marca_normalizada": "adriana cotrim acessorios",
-      "total": 2917.1,
-      "cupons": 12,
-      "itens": 17
+      "marca": "Loja Munira",
+      "marca_normalizada": "loja munira",
+      "total": 3039.96,
+      "cupons": 4,
+      "itens": 5
     },
     {
       "loja_sigla": "BS",
@@ -104,29 +113,29 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "Loja Munira",
-      "marca_normalizada": "loja munira",
-      "total": 2439.97,
-      "cupons": 3,
-      "itens": 4
+      "marca": "TIDASSA",
+      "marca_normalizada": "tidassa",
+      "total": 2139.8,
+      "cupons": 24,
+      "itens": 42
     },
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
       "marca": "eluizas",
       "marca_normalizada": "eluizas",
-      "total": 2009.7,
-      "cupons": 12,
-      "itens": 24
+      "total": 2107.7,
+      "cupons": 13,
+      "itens": 26
     },
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "TIDASSA",
-      "marca_normalizada": "tidassa",
-      "total": 1992.8,
-      "cupons": 23,
-      "itens": 39
+      "marca": "Drika biju rj",
+      "marca_normalizada": "drika biju rj",
+      "total": 1957.6,
+      "cupons": 15,
+      "itens": 24
     },
     {
       "loja_sigla": "BS",
@@ -136,15 +145,6 @@
       "total": 1941.0,
       "cupons": 12,
       "itens": 13
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "Drika biju rj",
-      "marca_normalizada": "drika biju rj",
-      "total": 1877.7,
-      "cupons": 14,
-      "itens": 23
     },
     {
       "loja_sigla": "BS",
@@ -160,9 +160,9 @@
       "loja_nome": "Barra Shopping",
       "marca": "nael modas",
       "marca_normalizada": "nael modas",
-      "total": 1392.0,
-      "cupons": 7,
-      "itens": 7
+      "total": 1575.1,
+      "cupons": 8,
+      "itens": 8
     },
     {
       "loja_sigla": "BS",
@@ -176,6 +176,15 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "bahar",
+      "marca_normalizada": "bahar",
+      "total": 819.25,
+      "cupons": 11,
+      "itens": 34
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "la persi",
       "marca_normalizada": "la persi",
       "total": 779.7,
@@ -185,11 +194,11 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "bahar",
-      "marca_normalizada": "bahar",
-      "total": 739.45,
-      "cupons": 9,
-      "itens": 26
+      "marca": "tului joias",
+      "marca_normalizada": "tului joias",
+      "total": 663.8,
+      "cupons": 6,
+      "itens": 8
     },
     {
       "loja_sigla": "BS",
@@ -199,15 +208,6 @@
       "total": 619.7,
       "cupons": 2,
       "itens": 6
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "tului joias",
-      "marca_normalizada": "tului joias",
-      "total": 594.8,
-      "cupons": 5,
-      "itens": 7
     },
     {
       "loja_sigla": "BS",
@@ -284,20 +284,20 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "mailly",
+      "marca_normalizada": "mailly",
+      "total": 379.7,
+      "cupons": 5,
+      "itens": 5
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "Clara Baraúna",
       "marca_normalizada": "clara barauna",
       "total": 362.0,
       "cupons": 2,
       "itens": 2
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "mailly",
-      "marca_normalizada": "mailly",
-      "total": 339.7,
-      "cupons": 4,
-      "itens": 4
     },
     {
       "loja_sigla": "BS",
@@ -374,6 +374,15 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "Carla Penteado Pratas",
+      "marca_normalizada": "carla penteado pratas",
+      "total": 109.9,
+      "cupons": 2,
+      "itens": 2
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "personalizados tuchebrite",
       "marca_normalizada": "personalizados tuchebrite",
       "total": 105.0,
@@ -421,9 +430,9 @@
       "loja_nome": "norteshopping",
       "marca": "territorio carioca",
       "marca_normalizada": "territorio carioca",
-      "total": 10439.2,
+      "total": 10858.9,
       "cupons": 59,
-      "itens": 99
+      "itens": 102
     },
     {
       "loja_sigla": "NS",
@@ -448,36 +457,45 @@
       "loja_nome": "norteshopping",
       "marca": "atelier jessica anizio",
       "marca_normalizada": "atelier jessica anizio",
-      "total": 4242.53,
-      "cupons": 11,
-      "itens": 14
+      "total": 4592.43,
+      "cupons": 12,
+      "itens": 15
     },
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
       "marca": "dream closet",
       "marca_normalizada": "dream closet",
-      "total": 3199.1,
-      "cupons": 7,
-      "itens": 9
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "Luminakokedamas",
-      "marca_normalizada": "luminakokedamas",
-      "total": 2952.6,
-      "cupons": 22,
-      "itens": 45
+      "total": 3449.0,
+      "cupons": 8,
+      "itens": 10
     },
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
       "marca": "Nath modas",
       "marca_normalizada": "nath modas",
-      "total": 2869.81,
-      "cupons": 12,
-      "itens": 19
+      "total": 3349.77,
+      "cupons": 15,
+      "itens": 23
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Luminakokedamas",
+      "marca_normalizada": "luminakokedamas",
+      "total": 3092.6,
+      "cupons": 23,
+      "itens": 47
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Loja Munira",
+      "marca_normalizada": "loja munira",
+      "total": 2549.96,
+      "cupons": 4,
+      "itens": 4
     },
     {
       "loja_sigla": "NS",
@@ -487,15 +505,6 @@
       "total": 1954.65,
       "cupons": 20,
       "itens": 35
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "Loja Munira",
-      "marca_normalizada": "loja munira",
-      "total": 1849.97,
-      "cupons": 3,
-      "itens": 3
     },
     {
       "loja_sigla": "NS",
@@ -511,18 +520,18 @@
       "loja_nome": "norteshopping",
       "marca": "vip glam",
       "marca_normalizada": "vip glam",
-      "total": 1471.3,
-      "cupons": 16,
-      "itens": 19
+      "total": 1551.1,
+      "cupons": 18,
+      "itens": 21
     },
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
       "marca": "mi moda fitness",
       "marca_normalizada": "mi moda fitness",
-      "total": 1268.2,
-      "cupons": 7,
-      "itens": 8
+      "total": 1539.0,
+      "cupons": 9,
+      "itens": 10
     },
     {
       "loja_sigla": "NS",

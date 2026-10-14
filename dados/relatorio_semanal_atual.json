@@ -1,22 +1,22 @@
 {
   "tipo": "semanal",
-  "data_coleta": "2026-10-13 05:49:32",
+  "data_coleta": "2026-10-14 03:58:53",
   "periodo_ini": "2026-10-12",
-  "periodo_fim": "2026-10-13",
-  "total_geral": 4225.38,
-  "total_marcas": 17,
+  "periodo_fim": "2026-10-14",
+  "total_geral": 5834.75,
+  "total_marcas": 23,
   "lojas": {
     "BS": {
       "nome": "Barra Shopping",
-      "total": 3039.0000000000005,
-      "cupons": 14,
-      "marcas": 11
+      "total": 3698.7000000000007,
+      "cupons": 19,
+      "marcas": 13
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 1186.38,
-      "cupons": 7,
-      "marcas": 6
+      "total": 2136.0499999999997,
+      "cupons": 14,
+      "marcas": 10
     }
   },
   "marcas": [
@@ -59,6 +59,24 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "amen",
+      "marca_normalizada": "amen",
+      "total": 387.8,
+      "cupons": 2,
+      "itens": 3
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "Donna Zu moda Feminina",
+      "marca_normalizada": "donna zu moda feminina",
+      "total": 319.8,
+      "cupons": 2,
+      "itens": 2
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "papeline",
       "marca_normalizada": "papeline",
       "total": 219.9,
@@ -68,11 +86,11 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "Donna Zu moda Feminina",
-      "marca_normalizada": "donna zu moda feminina",
-      "total": 159.9,
-      "cupons": 1,
-      "itens": 1
+      "marca": "nur.brand.nur",
+      "marca_normalizada": "nur.brand.nur",
+      "total": 202.0,
+      "cupons": 2,
+      "itens": 2
     },
     {
       "loja_sigla": "BS",
@@ -82,15 +100,6 @@
       "total": 147.5,
       "cupons": 2,
       "itens": 2
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "nur.brand.nur",
-      "marca_normalizada": "nur.brand.nur",
-      "total": 139.0,
-      "cupons": 1,
-      "itens": 1
     },
     {
       "loja_sigla": "BS",
@@ -113,6 +122,15 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "TIDASSA",
+      "marca_normalizada": "tidassa",
+      "total": 49.0,
+      "cupons": 1,
+      "itens": 1
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "zali acessorios",
       "marca_normalizada": "zali acessorios",
       "total": 29.0,
@@ -124,9 +142,27 @@
       "loja_nome": "norteshopping",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 439.7,
+      "total": 599.6,
+      "cupons": 2,
+      "itens": 4
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Nath modas",
+      "marca_normalizada": "nath modas",
+      "total": 439.98,
+      "cupons": 2,
+      "itens": 2
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Soul Bella",
+      "marca_normalizada": "soul bella",
+      "total": 319.8,
       "cupons": 1,
-      "itens": 3
+      "itens": 2
     },
     {
       "loja_sigla": "NS",
@@ -149,11 +185,29 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
-      "marca": "Nath modas",
-      "marca_normalizada": "nath modas",
-      "total": 189.99,
+      "marca": "al sallam",
+      "marca_normalizada": "al sallam",
+      "total": 89.99,
       "cupons": 1,
       "itens": 1
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "le acessorios",
+      "marca_normalizada": "le acessorios",
+      "total": 69.99,
+      "cupons": 1,
+      "itens": 1
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "NOVAPS",
+      "marca_normalizada": "novaps",
+      "total": 60.0,
+      "cupons": 2,
+      "itens": 2
     },
     {
       "loja_sigla": "NS",

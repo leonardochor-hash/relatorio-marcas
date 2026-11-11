@@ -1,27 +1,27 @@
 {
   "tipo": "mensal",
-  "data_coleta": "2026-11-10 06:03:34",
+  "data_coleta": "2026-11-11 05:43:37",
   "periodo_ini": "2026-11-01",
-  "periodo_fim": "2026-11-10",
-  "total_geral": 108178.78,
-  "total_marcas": 140,
+  "periodo_fim": "2026-11-11",
+  "total_geral": 118089.71,
+  "total_marcas": 144,
   "lojas": {
     "BS": {
       "nome": "Barra Shopping",
-      "total": 42385.92000000001,
-      "cupons": 168,
-      "marcas": 52
+      "total": 44916.91,
+      "cupons": 176,
+      "marcas": 53
     },
     "NS": {
       "nome": "norteshopping",
-      "total": 15209.4,
-      "cupons": 76,
-      "marcas": 24
+      "total": 16465.200000000004,
+      "cupons": 85,
+      "marcas": 27
     },
     "RS": {
       "nome": "Rio Sul",
-      "total": 50583.460000000036,
-      "cupons": 274,
+      "total": 56707.600000000035,
+      "cupons": 302,
       "marcas": 64
     }
   },
@@ -31,9 +31,9 @@
       "loja_nome": "Barra Shopping",
       "marca": "dream closet",
       "marca_normalizada": "dream closet",
-      "total": 8021.81,
-      "cupons": 11,
-      "itens": 19
+      "total": 8171.81,
+      "cupons": 12,
+      "itens": 20
     },
     {
       "loja_sigla": "BS",
@@ -58,18 +58,27 @@
       "loja_nome": "Barra Shopping",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 2408.5,
-      "cupons": 14,
-      "itens": 15
+      "total": 2568.4,
+      "cupons": 15,
+      "itens": 16
     },
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
       "marca": "Adriana Cotrim Acessorios",
       "marca_normalizada": "adriana cotrim acessorios",
-      "total": 1945.8,
-      "cupons": 9,
-      "itens": 11
+      "total": 2063.8,
+      "cupons": 10,
+      "itens": 12
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "Loja Munira",
+      "marca_normalizada": "loja munira",
+      "total": 1839.98,
+      "cupons": 3,
+      "itens": 3
     },
     {
       "loja_sigla": "BS",
@@ -79,6 +88,15 @@
       "total": 1646.1,
       "cupons": 3,
       "itens": 5
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "Luminakokedamas",
+      "marca_normalizada": "luminakokedamas",
+      "total": 1409.0,
+      "cupons": 3,
+      "itens": 15
     },
     {
       "loja_sigla": "BS",
@@ -110,15 +128,6 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "Loja Munira",
-      "marca_normalizada": "loja munira",
-      "total": 1239.99,
-      "cupons": 2,
-      "itens": 2
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
       "marca": "praise joias",
       "marca_normalizada": "praise joias",
       "total": 1079.5,
@@ -133,6 +142,15 @@
       "total": 1044.0,
       "cupons": 3,
       "itens": 3
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "nur.brand.nur",
+      "marca_normalizada": "nur.brand.nur",
+      "total": 934.2,
+      "cupons": 5,
+      "itens": 6
     },
     {
       "loja_sigla": "BS",
@@ -155,15 +173,6 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "nur.brand.nur",
-      "marca_normalizada": "nur.brand.nur",
-      "total": 836.0,
-      "cupons": 4,
-      "itens": 5
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
       "marca": "atelier jessica anizio",
       "marca_normalizada": "atelier jessica anizio",
       "total": 778.99,
@@ -178,6 +187,15 @@
       "total": 753.0,
       "cupons": 5,
       "itens": 4
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "borae loja carioca",
+      "marca_normalizada": "borae loja carioca",
+      "total": 694.0,
+      "cupons": 8,
+      "itens": 12
     },
     {
       "loja_sigla": "BS",
@@ -227,24 +245,6 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
-      "marca": "borae loja carioca",
-      "marca_normalizada": "borae loja carioca",
-      "total": 526.0,
-      "cupons": 7,
-      "itens": 11
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "corpo em evidencia",
-      "marca_normalizada": "corpo em evidencia",
-      "total": 519.5,
-      "cupons": 5,
-      "itens": 5
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
       "marca": "TIDASSA",
       "marca_normalizada": "tidassa",
       "total": 495.6,
@@ -259,6 +259,15 @@
       "total": 490.0,
       "cupons": 1,
       "itens": 1
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
+      "marca": "trendy acessorios",
+      "marca_normalizada": "trendy acessorios",
+      "total": 465.09,
+      "cupons": 6,
+      "itens": 9
     },
     {
       "loja_sigla": "BS",
@@ -281,29 +290,20 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "corpo em evidencia",
+      "marca_normalizada": "corpo em evidencia",
+      "total": 399.6,
+      "cupons": 4,
+      "itens": 4
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "Maya Boutique",
       "marca_normalizada": "maya boutique",
       "total": 379.9,
       "cupons": 1,
       "itens": 1
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "trendy acessorios",
-      "marca_normalizada": "trendy acessorios",
-      "total": 353.29,
-      "cupons": 5,
-      "itens": 7
-    },
-    {
-      "loja_sigla": "BS",
-      "loja_nome": "Barra Shopping",
-      "marca": "Luminakokedamas",
-      "marca_normalizada": "luminakokedamas",
-      "total": 353.0,
-      "cupons": 2,
-      "itens": 3
     },
     {
       "loja_sigla": "BS",
@@ -416,6 +416,15 @@
     {
       "loja_sigla": "BS",
       "loja_nome": "Barra Shopping",
+      "marca": "biaz store moda feminina",
+      "marca_normalizada": "biaz store moda feminina",
+      "total": 189.0,
+      "cupons": 1,
+      "itens": 1
+    },
+    {
+      "loja_sigla": "BS",
+      "loja_nome": "Barra Shopping",
       "marca": "rarel acessorios",
       "marca_normalizada": "rarel acessorios",
       "total": 170.0,
@@ -508,9 +517,18 @@
       "loja_nome": "norteshopping",
       "marca": "territorio carioca",
       "marca_normalizada": "territorio carioca",
-      "total": 1806.9,
-      "cupons": 9,
-      "itens": 13
+      "total": 2006.7,
+      "cupons": 10,
+      "itens": 15
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Nath modas",
+      "marca_normalizada": "nath modas",
+      "total": 1589.93,
+      "cupons": 7,
+      "itens": 7
     },
     {
       "loja_sigla": "NS",
@@ -520,15 +538,6 @@
       "total": 1509.87,
       "cupons": 4,
       "itens": 4
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "Nath modas",
-      "marca_normalizada": "nath modas",
-      "total": 1339.94,
-      "cupons": 6,
-      "itens": 6
     },
     {
       "loja_sigla": "NS",
@@ -551,6 +560,15 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "TIDASSA",
+      "marca_normalizada": "tidassa",
+      "total": 867.2,
+      "cupons": 6,
+      "itens": 10
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
       "total": 759.5,
@@ -569,15 +587,6 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
-      "marca": "TIDASSA",
-      "marca_normalizada": "tidassa",
-      "total": 727.3,
-      "cupons": 5,
-      "itens": 9
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
       "marca": "vallo",
       "marca_normalizada": "vallo",
       "total": 684.0,
@@ -592,6 +601,15 @@
       "total": 497.6,
       "cupons": 5,
       "itens": 5
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "ritty studio",
+      "marca_normalizada": "ritty studio",
+      "total": 346.41,
+      "cupons": 1,
+      "itens": 1
     },
     {
       "loja_sigla": "NS",
@@ -641,6 +659,15 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "RENATA VALENTIN",
+      "marca_normalizada": "renata valentin",
+      "total": 169.9,
+      "cupons": 1,
+      "itens": 1
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "ponto de luz semijoias",
       "marca_normalizada": "ponto de luz semijoias",
       "total": 164.97,
@@ -655,6 +682,15 @@
       "total": 109.99,
       "cupons": 1,
       "itens": 1
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
+      "marca": "Inova Laser Personalizados",
+      "marca_normalizada": "inova laser personalizados",
+      "total": 109.8,
+      "cupons": 2,
+      "itens": 2
     },
     {
       "loja_sigla": "NS",
@@ -686,20 +722,20 @@
     {
       "loja_sigla": "NS",
       "loja_nome": "norteshopping",
+      "marca": "NOVAPS",
+      "marca_normalizada": "novaps",
+      "total": 50.0,
+      "cupons": 4,
+      "itens": 10
+    },
+    {
+      "loja_sigla": "NS",
+      "loja_nome": "norteshopping",
       "marca": "familia el dourado",
       "marca_normalizada": "familia el dourado",
       "total": 35.0,
       "cupons": 1,
       "itens": 1
-    },
-    {
-      "loja_sigla": "NS",
-      "loja_nome": "norteshopping",
-      "marca": "NOVAPS",
-      "marca_normalizada": "novaps",
-      "total": 10.0,
-      "cupons": 2,
-      "itens": 2
     },
     {
       "loja_sigla": "NS",
@@ -715,45 +751,45 @@
       "loja_nome": "Rio Sul",
       "marca": "arrazo fashion",
       "marca_normalizada": "arrazo fashion",
-      "total": 3059.4,
-      "cupons": 5,
-      "itens": 6
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "Adriana Cotrim Acessorios",
-      "marca_normalizada": "adriana cotrim acessorios",
-      "total": 2718.0,
+      "total": 3989.3,
       "cupons": 6,
-      "itens": 18
+      "itens": 7
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
       "marca": "Donna Zu moda Feminina",
       "marca_normalizada": "donna zu moda feminina",
-      "total": 2598.3,
-      "cupons": 12,
-      "itens": 17
+      "total": 3237.9,
+      "cupons": 14,
+      "itens": 21
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
       "marca": "Florescendo",
       "marca_normalizada": "florescendo",
-      "total": 2548.0,
-      "cupons": 13,
-      "itens": 16
+      "total": 3187.0,
+      "cupons": 15,
+      "itens": 18
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
       "marca": "dream closet",
       "marca_normalizada": "dream closet",
-      "total": 2499.2,
-      "cupons": 6,
-      "itens": 8
+      "total": 2999.1,
+      "cupons": 7,
+      "itens": 9
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "Adriana Cotrim Acessorios",
+      "marca_normalizada": "adriana cotrim acessorios",
+      "total": 2858.0,
+      "cupons": 7,
+      "itens": 19
     },
     {
       "loja_sigla": "RS",
@@ -785,6 +821,24 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
+      "marca": "lufare semijoias",
+      "marca_normalizada": "lufare semijoias",
+      "total": 1579.1,
+      "cupons": 8,
+      "itens": 15
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "rio brasil souvenir",
+      "marca_normalizada": "rio brasil souvenir",
+      "total": 1518.0,
+      "cupons": 19,
+      "itens": 52
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
       "marca": "Magri Pora",
       "marca_normalizada": "magri pora",
       "total": 1438.0,
@@ -812,20 +866,20 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "lufare semijoias",
-      "marca_normalizada": "lufare semijoias",
-      "total": 1389.2,
+      "marca": "LES AMIES SEMIJOIAS",
+      "marca_normalizada": "les amies semijoias",
+      "total": 1289.0,
       "cupons": 7,
-      "itens": 11
+      "itens": 10
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "rio brasil souvenir",
-      "marca_normalizada": "rio brasil souvenir",
-      "total": 1211.0,
-      "cupons": 17,
-      "itens": 35
+      "marca": "ESSE ACESSORIOS",
+      "marca_normalizada": "esse acessorios",
+      "total": 1187.0,
+      "cupons": 9,
+      "itens": 13
     },
     {
       "loja_sigla": "RS",
@@ -839,29 +893,29 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "LES AMIES SEMIJOIAS",
-      "marca_normalizada": "les amies semijoias",
-      "total": 1089.1,
-      "cupons": 6,
-      "itens": 9
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "ESSE ACESSORIOS",
-      "marca_normalizada": "esse acessorios",
-      "total": 1029.0,
-      "cupons": 8,
+      "marca": "Joia Rara Modas Acessorios",
+      "marca_normalizada": "joia rara modas acessorios",
+      "total": 1176.9,
+      "cupons": 11,
       "itens": 11
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "Joia Rara Modas Acessorios",
-      "marca_normalizada": "joia rara modas acessorios",
-      "total": 961.1,
-      "cupons": 9,
-      "itens": 9
+      "marca": "valenttine style",
+      "marca_normalizada": "valenttine style",
+      "total": 1127.7,
+      "cupons": 2,
+      "itens": 3
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "maat acessorios",
+      "marca_normalizada": "maat acessorios",
+      "total": 1109.3,
+      "cupons": 6,
+      "itens": 7
     },
     {
       "loja_sigla": "RS",
@@ -893,11 +947,20 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "maat acessorios",
-      "marca_normalizada": "maat acessorios",
-      "total": 859.4,
-      "cupons": 5,
+      "marca": "Glau Pratas",
+      "marca_normalizada": "glau pratas",
+      "total": 879.4,
+      "cupons": 4,
       "itens": 6
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "Sutra",
+      "marca_normalizada": "sutra",
+      "total": 872.0,
+      "cupons": 6,
+      "itens": 11
     },
     {
       "loja_sigla": "RS",
@@ -929,15 +992,6 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "valenttine style",
-      "marca_normalizada": "valenttine style",
-      "total": 709.8,
-      "cupons": 1,
-      "itens": 2
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
       "marca": "eluizas",
       "marca_normalizada": "eluizas",
       "total": 703.9,
@@ -947,20 +1001,11 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "Sutra",
-      "marca_normalizada": "sutra",
-      "total": 691.0,
+      "marca": "Prataria Mudra",
+      "marca_normalizada": "prataria mudra",
+      "total": 678.0,
       "cupons": 4,
-      "itens": 8
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "Glau Pratas",
-      "marca_normalizada": "glau pratas",
-      "total": 689.5,
-      "cupons": 3,
-      "itens": 5
+      "itens": 4
     },
     {
       "loja_sigla": "RS",
@@ -983,20 +1028,20 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "Prataria Mudra",
-      "marca_normalizada": "prataria mudra",
-      "total": 600.0,
+      "marca": "petalas de madeira",
+      "marca_normalizada": "petalas de madeira",
+      "total": 649.48,
       "cupons": 3,
-      "itens": 3
+      "itens": 26
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "petalas de madeira",
-      "marca_normalizada": "petalas de madeira",
-      "total": 574.54,
-      "cupons": 2,
-      "itens": 23
+      "marca": "acessorios da tuca",
+      "marca_normalizada": "acessorios da tuca",
+      "total": 561.2,
+      "cupons": 7,
+      "itens": 8
     },
     {
       "loja_sigla": "RS",
@@ -1028,20 +1073,20 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
+      "marca": "zali acessorios",
+      "marca_normalizada": "zali acessorios",
+      "total": 500.0,
+      "cupons": 6,
+      "itens": 8
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
       "marca": "borae loja carioca",
       "marca_normalizada": "borae loja carioca",
       "total": 443.0,
       "cupons": 3,
       "itens": 3
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "acessorios da tuca",
-      "marca_normalizada": "acessorios da tuca",
-      "total": 441.3,
-      "cupons": 6,
-      "itens": 7
     },
     {
       "loja_sigla": "RS",
@@ -1055,11 +1100,29 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
+      "marca": "jambo sol e mar",
+      "marca_normalizada": "jambo sol e mar",
+      "total": 409.8,
+      "cupons": 2,
+      "itens": 2
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
       "marca": "Belanna",
       "marca_normalizada": "belanna",
       "total": 407.0,
       "cupons": 3,
       "itens": 3
+    },
+    {
+      "loja_sigla": "RS",
+      "loja_nome": "Rio Sul",
+      "marca": "Aquarius Pratas",
+      "marca_normalizada": "aquarius pratas",
+      "total": 399.6,
+      "cupons": 3,
+      "itens": 5
     },
     {
       "loja_sigla": "RS",
@@ -1100,27 +1163,18 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "zali acessorios",
-      "marca_normalizada": "zali acessorios",
-      "total": 324.0,
-      "cupons": 5,
-      "itens": 5
+      "marca": "liber liber estudio",
+      "marca_normalizada": "liber liber estudio",
+      "total": 330.0,
+      "cupons": 2,
+      "itens": 2
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "jambo sol e mar",
-      "marca_normalizada": "jambo sol e mar",
-      "total": 249.9,
-      "cupons": 1,
-      "itens": 1
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "Aquarius Pratas",
-      "marca_normalizada": "aquarius pratas",
-      "total": 219.8,
+      "marca": "TATI BEACHWEAR",
+      "marca_normalizada": "tati beachwear",
+      "total": 285.8,
       "cupons": 2,
       "itens": 2
     },
@@ -1172,20 +1226,20 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "liber liber estudio",
-      "marca_normalizada": "liber liber estudio",
-      "total": 170.0,
+      "marca": "kouda",
+      "marca_normalizada": "kouda",
+      "total": 160.0,
       "cupons": 1,
       "itens": 1
     },
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "kouda",
-      "marca_normalizada": "kouda",
-      "total": 160.0,
-      "cupons": 1,
-      "itens": 1
+      "marca": "rio dos sonhos",
+      "marca_normalizada": "rio dos sonhos",
+      "total": 158.0,
+      "cupons": 4,
+      "itens": 4
     },
     {
       "loja_sigla": "RS",
@@ -1217,27 +1271,9 @@
     {
       "loja_sigla": "RS",
       "loja_nome": "Rio Sul",
-      "marca": "rio dos sonhos",
-      "marca_normalizada": "rio dos sonhos",
-      "total": 120.0,
-      "cupons": 3,
-      "itens": 3
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
       "marca": "shanty lingerie",
       "marca_normalizada": "shanty lingerie",
       "total": 120.0,
-      "cupons": 1,
-      "itens": 1
-    },
-    {
-      "loja_sigla": "RS",
-      "loja_nome": "Rio Sul",
-      "marca": "TATI BEACHWEAR",
-      "marca_normalizada": "tati beachwear",
-      "total": 105.9,
       "cupons": 1,
       "itens": 1
     },
